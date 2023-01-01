@@ -18,6 +18,6 @@ export class ResumeDataService {
   }
 
   getServer(){
-    return `http://localhost:4200`
+    return `https://jithinnath.github.io/resume-builder/`
   }
 }
