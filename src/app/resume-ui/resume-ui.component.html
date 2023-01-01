@@ -1,0 +1,268 @@
+<mat-card style="z-index: 0;box-shadow: none;" class="padding-16">
+
+
+
+  <div class="sub-header">
+    Personal Details
+  </div>
+  <br>
+  <form [formGroup]="resumeForm" (ngSubmit)="build(resumeForm.value)">
+    <div [formGroup]="resumeForm.controls.personalDetails">
+      <div class="container">
+        <div>
+          <label>upload image</label>
+          <input placeholder="Your Name" (change)="onFileChange($event)" type="file"
+            accept="image/jpeg, image/png, image/jpg" id="image">
+          <img id="prev" src="#" alt="your image" style="height: 100px;width: 100px;"
+          onerror="this.onerror=null;this.src='../assets/sample.jpg';"/>
+        </div>
+        <div>
+          <div class="sub-header-small">
+            Proffesional Summary
+          </div>
+          <br>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Proffesional Summary</mat-label>
+            <textarea matInput formControlName="profileDescription"
+              placeholder="Experienced web developer looking for..."></textarea>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Your Name" formControlName="name">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Your Designation</mat-label>
+          <input matInput placeholder="Seniour Product Developer" formControlName="jobTitle">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="yourmail@example.com" formControlName="email">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Mobile Number</mat-label>
+          <input matInput placeholder="12 123 123 12" formControlName="mobile">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Country</mat-label>
+          <input matInput placeholder="India" formControlName="country">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>City</mat-label>
+          <input matInput placeholder="Bengaluru" formControlName="city">
+        </mat-form-field>
+      </div>
+      <div>
+        <div class="sub-header">
+          Proffesional Summary
+        </div>
+        <br>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Proffesional Summary</mat-label>
+          <textarea matInput formControlName="profileDescription"
+            placeholder="Experienced web developer looking for..."></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      <div class="sub-header">
+        Employment History
+      </div>
+      <br>
+      <div class="example-form">
+        <form class="example-form">
+          <mat-accordion>
+            <mat-expansion-panel [formGroup]="fg(emp)"
+              *ngFor="let emp of resumeForm.controls.employmentHistory.controls let i = index" expanded="true">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <span class="sub-header-small">Add Your Employment Details</span>
+                </mat-panel-title>
+                <mat-panel-description>
+                  Employer info
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <!-- <form class="example-form" [formGroup]="fg(emp)" > -->
+              <!-- <div> -->
+              <div class="container">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Job Title</mat-label>
+                  <input matInput formControlName="designation" placeholder="Senior Product Developer">
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Employer</mat-label>
+                  <input matInput formControlName="compayName" placeholder="Tata Consultancy Services">
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Date</mat-label>
+                  <input matInput formControlName="from" placeholder="yourmail@example.com">
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>City</mat-label>
+                  <input matInput formControlName="city" placeholder="Benaluru">
+                </mat-form-field>
+              </div>
+              <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Proffesional Description</mat-label>
+                <textarea formControlName="description" matInput
+                  placeholder="Create and implement  banking product solutions ..."></textarea>
+              </mat-form-field>
+              <!-- </form> -->
+              <!-- </div> -->
+              <mat-action-row>
+                <button mat-stroked-button color="warn" (click)="deleteEmployment(i)">delete</button>
+                <!-- <button mat-stroked-button color="primary" (click)="addEmployment()">Add New</button> -->
+              </mat-action-row>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </form>
+        <button mat-stroked-button color="primary" (click)="addEmployment()">Add New</button>
+      </div>
+
+    </div>
+
+    <br>
+
+
+
+
+    <div class="example-form">
+      <div class="sub-header">
+        Education
+      </div>
+      <br>
+      <mat-accordion>
+        <mat-expansion-panel [formGroup]="fg(emp)"
+          *ngFor="let emp of resumeForm.controls.educations.controls let i = index" expanded="true">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Add Your Education Details
+            </mat-panel-title>
+            <mat-panel-description>
+              Employer info
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <!-- <form class="example-form" [formGroup]="educationDetails"> -->
+          <div class="container">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Job Title</mat-label>
+              <input matInput formControlName="designation" placeholder="Senior Product Developer">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Employer</mat-label>
+              <input matInput formControlName="compayName" placeholder="Tata Consultancy Services">
+            </mat-form-field>
+            <mat-form-field class="date" appearance="outline">
+              <mat-label>Date</mat-label>
+              <input matInput formControlName="from" placeholder="yourmail@example.com">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>City</mat-label>
+              <input matInput formControlName="city" placeholder="Benaluru">
+            </mat-form-field>
+          </div>
+
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Proffesional Description</mat-label>
+            <textarea formControlName="description" matInput
+              placeholder="Create and implement  banking product solutions ..."></textarea>
+          </mat-form-field>
+
+          <!-- </form> -->
+          <mat-action-row>
+            <button mat-stroked-button color="warn" (click)="deleteEducation(i)">delete</button>
+            <!-- <button mat-stroked-button color="primary" (click)="addEducation()">Add New</button> -->
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <button mat-stroked-button color="primary" (click)="addEducation()">Add New</button>
+    <br>
+    <br>
+    <div class="sub-header">Skills</div>
+    <div [formGroup]="fg(skill)" *ngFor="let skill of resumeForm.controls.skills.controls let i = index">
+      <!-- <mat-card> -->
+      <div class="container-3">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Skill</mat-label>
+          <input matInput formControlName="name" placeholder="Java" [matAutocomplete]="skillac">
+          <mat-autocomplete autoActiveFirstOption #skillac="matAutocomplete">
+            <mat-option *ngFor="let option of skillOptions " [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <mat-button-toggle-group formControlName="level" aria-label="Font Style">
+          <mat-button-toggle value="Professional">Professional</mat-button-toggle>
+          <mat-button-toggle value="Intermediate">Intermediate</mat-button-toggle>
+          <mat-button-toggle value="Beginner">Beginner</mat-button-toggle>
+        </mat-button-toggle-group>
+        <button mat-stroked-button color="warn" (click)="deleteSkill(i)">Delete</button>
+      </div>
+      <!-- </mat-card> -->
+    </div>
+    <br>
+    <button mat-stroked-button color="primary" (click)="addSkill()">Add New</button>
+    <br>
+    <br>
+    <div class="sub-header">languages</div>
+    <div [formGroup]="fg(skill)" *ngFor="let skill of resumeForm.controls.languages.controls let i = index">
+      <!-- <mat-card> -->
+      <div class="container-3">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Skill</mat-label>
+          <input matInput formControlName="name" placeholder="Java" [matAutocomplete]="skillac">
+          <mat-autocomplete autoActiveFirstOption #skillac="matAutocomplete">
+            <mat-option *ngFor="let option of languageOptions " [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <mat-button-toggle-group formControlName="level" aria-label="Font Style">
+          <mat-button-toggle value="Fluent">Fluent</mat-button-toggle>
+          <mat-button-toggle value="Proficient">Proficient</mat-button-toggle>
+          <mat-button-toggle value="Conversant">Conversant</mat-button-toggle>
+        </mat-button-toggle-group>
+        <button mat-stroked-button color="warn" (click)="deleteLanguage(i)">Delete</button>
+      </div>
+      <!-- </mat-card> -->
+    </div>
+    <br>
+    <button mat-stroked-button color="primary" (click)="addLanguage()">Add New</button>
+    <br>
+    <br>
+
+    <div class="sub-header">Social Links</div>
+    <div [formGroup]="fg(skill)" *ngFor="let skill of resumeForm.controls.socialLinks.controls let i = index">
+      <!-- <mat-card> -->
+      <div class="container-3">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Skill</mat-label>
+          <input matInput formControlName="name" placeholder="Java" [matAutocomplete]="skillac">
+          <mat-autocomplete autoActiveFirstOption #skillac="matAutocomplete">
+            <mat-option *ngFor="let option of linkOptions " [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Date</mat-label>
+          <input matInput formControlName="level" placeholder="yourmail@example.com">
+        </mat-form-field>
+        <button mat-stroked-button color="warn" (click)="deleteLink(i)">Delete</button>
+      </div>
+      <!-- </mat-card> -->
+    </div>
+    <br>
+    <button mat-stroked-button color="primary" (click)="addLink()">Add New</button>
+    <br>
+    <br>
+    <mat-card-actions align="end">
+
+      <button mat-raised-button color="primary">Build</button>
+
+    </mat-card-actions>
+  </form>
+</mat-card>
