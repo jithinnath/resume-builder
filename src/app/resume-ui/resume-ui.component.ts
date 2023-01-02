@@ -23,7 +23,7 @@ export interface edDeatails {
 
 @Component({
   selector: 'app-resume-ui',
-  templateUrl: './resume-ui.component.html',
+  templateUrl: './resume-ui.componet.rewrite.html',
   styleUrls: ['./resume-ui.component.scss']
 })
 export class ResumeUIComponent implements OnInit {
