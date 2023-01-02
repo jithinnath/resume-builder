@@ -166,6 +166,9 @@ export class ResumeUIComponent implements OnInit {
       this.resumeForm.markAllAsTouched();
       return;
     }
+    if(!this.imgBase64){
+      throw Error('upload image')
+    }
     this._createPdfcall(data)
 
 
@@ -196,6 +199,16 @@ export class ResumeUIComponent implements OnInit {
     reader.onload = callback
   }
 
+
+
+
+  emptitle(emp:any){
+    const empx = this.fg(emp)
+    if(!this.fg(emp)?.get('designation')?.value || !this.fg(emp).get('compayName')?.value){
+     return `Enter your employment details`
+    }
+    return  this.fg(emp).get('designation')?.value +' at ' +this.fg(emp).get('compayName')?.value
+  }
 
 }
 

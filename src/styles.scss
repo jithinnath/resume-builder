@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-
+// @import "../node_modules/bootstrap/scss/bootstrap";
+// @import url("../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss");
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Poppins';background-color: #eeeeee;}
 .padding-16{

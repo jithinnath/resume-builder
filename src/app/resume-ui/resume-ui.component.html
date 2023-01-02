@@ -1,244 +1,271 @@
-<mat-card style="z-index: 0;box-shadow: none;" class="padding-16">
+<!-- <mat-card style="z-index: 0;box-shadow: none;" class="container"> -->
 
 
-
-  <div class="sub-header">
-    Personal Details
-  </div>
-  <br>
-  <form [formGroup]="resumeForm" (ngSubmit)="build(resumeForm.value)">
-    <div [formGroup]="resumeForm.controls.personalDetails">
-      <div class="container">
-        <div>
-          <label>upload image</label>
-          <input placeholder="Your Name" (change)="onFileChange($event)" type="file"
-            accept="image/jpeg, image/png, image/jpg" id="image">
-          <img id="prev" src="#" alt="your image" style="height: 100px;width: 100px;"
-          onerror="this.onerror=null;this.src='../assets/sample.jpg';"/>
-        </div>
-        <div>
-          <div class="sub-header-small">
-            Proffesional Summary
-          </div>
-          <br>
-          <mat-form-field class="example-full-width" appearance="outline">
-            <mat-label>Proffesional Summary</mat-label>
-            <textarea matInput formControlName="profileDescription"
-              placeholder="Experienced web developer looking for..."></textarea>
-          </mat-form-field>
-        </div>
-
-        <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Your Name" formControlName="name">
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>Your Designation</mat-label>
-          <input matInput placeholder="Seniour Product Developer" formControlName="jobTitle">
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>Email</mat-label>
-          <input matInput placeholder="yourmail@example.com" formControlName="email">
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>Mobile Number</mat-label>
-          <input matInput placeholder="12 123 123 12" formControlName="mobile">
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>Country</mat-label>
-          <input matInput placeholder="India" formControlName="country">
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>City</mat-label>
-          <input matInput placeholder="Bengaluru" formControlName="city">
-        </mat-form-field>
+<form [formGroup]="resumeForm" (ngSubmit)="build(resumeForm.value)">
+  <figure class="highlight sub-header">
+    <pre><div class="display-6">Personal Details</div></pre>
+  </figure>
+  <div [formGroup]="resumeForm.controls.personalDetails" class="content-box">
+    <div class="row">
+      <div class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
+        <label>upload image</label>
+        <input placeholder="Your Name" (change)="onFileChange($event)" type="file"
+          accept="image/jpeg, image/png, image/jpg" id="image">
+        <img id="prev" src="#" alt="your image" style="height: 100px;width: 100px;"
+          onerror="this.onerror=null;this.src='../assets/sample.jpg';" />
       </div>
-      <div>
-        <div class="sub-header">
+      <div class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
+        <div class="sub-header-small">
           Proffesional Summary
         </div>
         <br>
-        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-form-field class="col-xs-6 col-sm-3 example-full-width" appearance="outline">
           <mat-label>Proffesional Summary</mat-label>
           <textarea matInput formControlName="profileDescription"
             placeholder="Experienced web developer looking for..."></textarea>
         </mat-form-field>
       </div>
+
+      <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Your Name" formControlName="name">
+      </mat-form-field>
+      <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" appearance="outline">
+        <mat-label>Your Designation</mat-label>
+        <input matInput placeholder="Seniour Product Developer" formControlName="jobTitle">
+      </mat-form-field>
+      <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="yourmail@example.com" formControlName="email">
+      </mat-form-field>
+      <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" appearance="outline">
+        <mat-label>Mobile Number</mat-label>
+        <input matInput placeholder="12 123 123 12" formControlName="mobile">
+      </mat-form-field>
+      <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" appearance="outline">
+        <mat-label>Country</mat-label>
+        <input matInput placeholder="India" formControlName="country">
+      </mat-form-field>
+      <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" appearance="outline">
+        <mat-label>City</mat-label>
+        <input matInput placeholder="Bengaluru" formControlName="city">
+      </mat-form-field>
     </div>
+  </div>
+  <br>
+  <figure class="highlight sub-header">
+    <pre><div class="display-6">Employment History</div></pre>
+  </figure>
+  <div class="content-box">
+    <br>
     <div>
-      <div class="sub-header">
-        Employment History
-      </div>
-      <br>
-      <div class="example-form">
-        <form class="example-form">
-          <mat-accordion>
-            <mat-expansion-panel [formGroup]="fg(emp)"
-              *ngFor="let emp of resumeForm.controls.employmentHistory.controls let i = index" expanded="true">
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  <span class="sub-header-small">Add Your Employment Details</span>
-                </mat-panel-title>
-                <mat-panel-description>
-                  Employer info
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <!-- <form class="example-form" [formGroup]="fg(emp)" > -->
-              <!-- <div> -->
-              <div class="container">
-                <mat-form-field class="example-full-width" appearance="outline">
-                  <mat-label>Job Title</mat-label>
-                  <input matInput formControlName="designation" placeholder="Senior Product Developer">
-                </mat-form-field>
-                <mat-form-field class="example-full-width" appearance="outline">
-                  <mat-label>Employer</mat-label>
-                  <input matInput formControlName="compayName" placeholder="Tata Consultancy Services">
-                </mat-form-field>
-                <mat-form-field class="example-full-width" appearance="outline">
-                  <mat-label>Date</mat-label>
-                  <input matInput formControlName="from" placeholder="yourmail@example.com">
-                </mat-form-field>
-                <mat-form-field class="example-full-width" appearance="outline">
-                  <mat-label>City</mat-label>
-                  <input matInput formControlName="city" placeholder="Benaluru">
-                </mat-form-field>
-              </div>
-              <mat-form-field class="example-full-width" appearance="outline">
+      <form>
+        <mat-accordion class="accordion">
+          <mat-expansion-panel [formGroup]="fg(emp)"
+            *ngFor="let emp of resumeForm.controls.employmentHistory.controls let i = index" expanded="true"
+            style="box-shadow: none;" class="accordion-item accordion-collapse collapse show">
+            <mat-expansion-panel-header class="accordion-header">
+              <mat-panel-title>
+                <span class="sub-header-small">{{emptitle(emp)}}</span>
+              </mat-panel-title>
+              <!-- <mat-panel-description>
+                Employer info
+              </mat-panel-description> -->
+            </mat-expansion-panel-header>
+            <!-- <form class="example-form" [formGroup]="fg(emp)" > -->
+            <!-- <div> -->
+            <div class="row accordion-body accordion-body-padding">
+              <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" appearance="outline">
+                <mat-label>Job Title</mat-label>
+                <input matInput formControlName="designation" placeholder="Senior Product Developer">
+              </mat-form-field>
+              <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" appearance="outline">
+                <mat-label>Employer</mat-label>
+                <input matInput formControlName="compayName" placeholder="Tata Consultancy Services">
+              </mat-form-field>
+              <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" appearance="outline">
+                <mat-label>Date</mat-label>
+                <input matInput formControlName="from" placeholder="yourmail@example.com">
+              </mat-form-field>
+              <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" appearance="outline">
+                <mat-label>City</mat-label>
+                <input matInput formControlName="city" placeholder="Benaluru">
+              </mat-form-field>
+              <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" appearance="outline">
                 <mat-label>Proffesional Description</mat-label>
                 <textarea formControlName="description" matInput
                   placeholder="Create and implement  banking product solutions ..."></textarea>
               </mat-form-field>
-              <!-- </form> -->
-              <!-- </div> -->
-              <mat-action-row>
-                <button mat-stroked-button color="warn" (click)="deleteEmployment(i)">delete</button>
-                <!-- <button mat-stroked-button color="primary" (click)="addEmployment()">Add New</button> -->
-              </mat-action-row>
-            </mat-expansion-panel>
-          </mat-accordion>
-        </form>
-        <button mat-stroked-button color="primary" (click)="addEmployment()">Add New</button>
-      </div>
-
-    </div>
-
-    <br>
-
-
-
-
-    <div class="example-form">
-      <div class="sub-header">
-        Education
-      </div>
+            </div>
+            <br>
+            <!-- </form> -->
+            <!-- </div> -->
+            <mat-action-row>
+              <button mat-stroked-button color="warn" (click)="deleteEmployment(i)" type="button">delete</button>
+              <!-- <button mat-stroked-button color="primary" (click)="addEmployment()">Add New</button> -->
+            </mat-action-row>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </form>
       <br>
-      <mat-accordion>
-        <mat-expansion-panel [formGroup]="fg(emp)"
-          *ngFor="let emp of resumeForm.controls.educations.controls let i = index" expanded="true">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Add Your Education Details
-            </mat-panel-title>
-            <mat-panel-description>
-              Employer info
-            </mat-panel-description>
-          </mat-expansion-panel-header>
+      <button mat-stroked-button color="primary" (click)="addEmployment()" type="button">Add New</button>
+    </div>
+  </div>
+  <br>
+  <figure class="highlight sub-header">
+    <pre><div class="display-6">Education</div></pre>
+  </figure>
+  <div class="content-box">
+    <mat-accordion class="accordion">
+      <mat-expansion-panel [formGroup]="fg(emp)"
+        *ngFor="let emp of resumeForm.controls.educations.controls let i = index" expanded="true"
+        style="box-shadow: none;" class="accordion-item accordion-collapse collapse show">
+        <mat-expansion-panel-header class="accordion-header">
+          <mat-panel-title>
+            {{emptitle(emp)}}
+          </mat-panel-title>
+          <!-- <mat-panel-description>
+            Employer info
+          </mat-panel-description> -->
+        </mat-expansion-panel-header>
 
-          <!-- <form class="example-form" [formGroup]="educationDetails"> -->
-          <div class="container">
-            <mat-form-field class="example-full-width" appearance="outline">
-              <mat-label>Job Title</mat-label>
-              <input matInput formControlName="designation" placeholder="Senior Product Developer">
-            </mat-form-field>
-            <mat-form-field class="example-full-width" appearance="outline">
-              <mat-label>Employer</mat-label>
-              <input matInput formControlName="compayName" placeholder="Tata Consultancy Services">
-            </mat-form-field>
-            <mat-form-field class="date" appearance="outline">
-              <mat-label>Date</mat-label>
-              <input matInput formControlName="from" placeholder="yourmail@example.com">
-            </mat-form-field>
-            <mat-form-field class="example-full-width" appearance="outline">
-              <mat-label>City</mat-label>
-              <input matInput formControlName="city" placeholder="Benaluru">
-            </mat-form-field>
-          </div>
-
-          <mat-form-field class="example-full-width" appearance="outline">
+        <!-- <form class="example-form" [formGroup]="educationDetails"> -->
+        <div class="row accordion-body accordion-body-padding">
+          <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" appearance="outline">
+            <mat-label>Job Title</mat-label>
+            <input matInput formControlName="designation" placeholder="Senior Product Developer">
+          </mat-form-field>
+          <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" appearance="outline">
+            <mat-label>Employer</mat-label>
+            <input matInput formControlName="compayName" placeholder="Tata Consultancy Services">
+          </mat-form-field>
+          <mat-form-field class="date" appearance="outline">
+            <mat-label>Date</mat-label>
+            <input matInput formControlName="from" placeholder="yourmail@example.com">
+          </mat-form-field>
+          <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" appearance="outline">
+            <mat-label>City</mat-label>
+            <input matInput formControlName="city" placeholder="Benaluru">
+          </mat-form-field>
+          <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" appearance="outline">
             <mat-label>Proffesional Description</mat-label>
             <textarea formControlName="description" matInput
               placeholder="Create and implement  banking product solutions ..."></textarea>
           </mat-form-field>
 
-          <!-- </form> -->
-          <mat-action-row>
-            <button mat-stroked-button color="warn" (click)="deleteEducation(i)">delete</button>
-            <!-- <button mat-stroked-button color="primary" (click)="addEducation()">Add New</button> -->
-          </mat-action-row>
-        </mat-expansion-panel>
-      </mat-accordion>
-    </div>
-    <button mat-stroked-button color="primary" (click)="addEducation()">Add New</button>
+        </div>
+
+        <br>
+
+        <!-- </form> -->
+        <mat-action-row>
+          <button mat-stroked-button color="warn" (click)="deleteEducation(i)" type="button">delete</button>
+          <!-- <button mat-stroked-button color="primary" (click)="addEducation()">Add New</button> -->
+        </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
     <br>
-    <br>
-    <div class="sub-header">Skills</div>
+    <button mat-stroked-button color="primary" (click)="addEducation()" type="button">Add New</button>
+  </div>
+
+  <br>
+  <br>
+  <figure class="highlight sub-header">
+    <pre><div class="display-6">Skills</div></pre>
+  </figure>
+  <div class="content-box">
     <div [formGroup]="fg(skill)" *ngFor="let skill of resumeForm.controls.skills.controls let i = index">
       <!-- <mat-card> -->
-      <div class="container-3">
-        <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>Skill</mat-label>
-          <input matInput formControlName="name" placeholder="Java" [matAutocomplete]="skillac">
-          <mat-autocomplete autoActiveFirstOption #skillac="matAutocomplete">
-            <mat-option *ngFor="let option of skillOptions " [value]="option">
-              {{option}}
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-        <mat-button-toggle-group formControlName="level" aria-label="Font Style">
-          <mat-button-toggle value="Professional">Professional</mat-button-toggle>
-          <mat-button-toggle value="Intermediate">Intermediate</mat-button-toggle>
-          <mat-button-toggle value="Beginner">Beginner</mat-button-toggle>
-        </mat-button-toggle-group>
-        <button mat-stroked-button color="warn" (click)="deleteSkill(i)">Delete</button>
+      <div class="row">
+
+          <mat-form-field  appearance="outline" class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <mat-label>Skill</mat-label>
+            <input matInput formControlName="name" placeholder="Java" [matAutocomplete]="skillac">
+            <mat-autocomplete autoActiveFirstOption #skillac="matAutocomplete">
+              <mat-option *ngFor="let option of skillOptions " [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 button-toggle-group-padding place-center">
+          <mat-button-toggle-group formControlName="level" aria-label="Font Style" class="example-full-width btn-group btn-group-toggle row">
+            <mat-button-toggle value="Professional" class="btn col-xs-4 col-sm-4 col-md-4 col-lg-4"><p>Professional</p></mat-button-toggle>
+            <mat-button-toggle value="Intermediate" class="btn col-xs-4 col-sm-4 col-md-4 col-lg-4"><p>Intermediate</p></mat-button-toggle>
+            <mat-button-toggle value="Beginner" class="btn col-xs-4 col-sm-4 col-md-4 col-lg-4"><p>Beginner</p></mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <button mat-stroked-button color="warn" (click)="deleteSkill(i)" type="button" class="button-margin-h">Delete</button>
+        </div>
       </div>
       <!-- </mat-card> -->
     </div>
     <br>
-    <button mat-stroked-button color="primary" (click)="addSkill()">Add New</button>
+    <button mat-stroked-button color="primary" (click)="addSkill()" type="button">Add New</button>
     <br>
-    <br>
-    <div class="sub-header">languages</div>
+  </div>
+  <br>
+  <figure class="highlight sub-header">
+    <pre><div class="display-6">Languages</div></pre>
+  </figure>
+  <div class="content-box">
     <div [formGroup]="fg(skill)" *ngFor="let skill of resumeForm.controls.languages.controls let i = index">
       <!-- <mat-card> -->
-      <div class="container-3">
-        <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>Skill</mat-label>
-          <input matInput formControlName="name" placeholder="Java" [matAutocomplete]="skillac">
-          <mat-autocomplete autoActiveFirstOption #skillac="matAutocomplete">
-            <mat-option *ngFor="let option of languageOptions " [value]="option">
-              {{option}}
-            </mat-option>
-          </mat-autocomplete>
-        </mat-form-field>
-        <mat-button-toggle-group formControlName="level" aria-label="Font Style">
-          <mat-button-toggle value="Fluent">Fluent</mat-button-toggle>
-          <mat-button-toggle value="Proficient">Proficient</mat-button-toggle>
-          <mat-button-toggle value="Conversant">Conversant</mat-button-toggle>
-        </mat-button-toggle-group>
-        <button mat-stroked-button color="warn" (click)="deleteLanguage(i)">Delete</button>
+      <div class="row">
+
+          <mat-form-field class="col-xs-4 col-sm-4 col-md-4 col-lg-4" appearance="outline">
+            <mat-label>Skill</mat-label>
+            <input matInput formControlName="name" placeholder="Java" [matAutocomplete]="skillac">
+            <mat-autocomplete autoActiveFirstOption #skillac="matAutocomplete">
+              <mat-option *ngFor="let option of languageOptions " [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 button-toggle-group-padding place-center" >
+          <mat-button-toggle-group formControlName="level" aria-label="Font Style" class="example-full-width btn-group btn-group-toggle row">
+            <mat-button-toggle value="Fluent" class="btn col-xs-4 col-sm-4 col-md-4 col-lg-4">Fluent</mat-button-toggle>
+            <mat-button-toggle value="Proficient" class="btn col-xs-4 col-sm-4 col-md-4 col-lg-4">Proficient</mat-button-toggle>
+            <mat-button-toggle value="Conversant" class="btn col-xs-4 col-sm-4 col-md-4 col-lg-4">Conversant</mat-button-toggle>
+          </mat-button-toggle-group>
+          <!-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-primary active">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked style="position: absolute;
+              clip: rect(0,0,0,0);
+              pointer-events: none;"> Fluent
+            </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option2" autocomplete="off" style="position: absolute;
+              clip: rect(0,0,0,0);
+              pointer-events: none;">Proficient
+            </label>
+            <label class="btn btn-primary">
+              <input type="radio" name="options" id="option3" autocomplete="off" style="position: absolute;
+              clip: rect(0,0,0,0);
+              pointer-events: none;"> Conversant
+            </label>
+          </div> -->
+        </div>
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2"><button mat-stroked-button color="warn" (click)="deleteLanguage(i)" type="button" class="button-margin-h">Delete</button></div>
       </div>
       <!-- </mat-card> -->
     </div>
     <br>
-    <button mat-stroked-button color="primary" (click)="addLanguage()">Add New</button>
+    <button mat-stroked-button color="primary" (click)="addLanguage()" type="button">Add New</button>
     <br>
-    <br>
+  </div>
+  <br>
 
-    <div class="sub-header">Social Links</div>
+  <figure class="highlight sub-header">
+    <pre><div class="display-6">Social Links</div></pre>
+  </figure>
+  <div class="content-box">
     <div [formGroup]="fg(skill)" *ngFor="let skill of resumeForm.controls.socialLinks.controls let i = index">
       <!-- <mat-card> -->
-      <div class="container-3">
-        <mat-form-field class="example-full-width" appearance="outline">
+      <div class="row">
+        <mat-form-field class="col-xs-4 col-sm-4 col-md-4 col-lg-4" appearance="outline">
           <mat-label>Skill</mat-label>
           <input matInput formControlName="name" placeholder="Java" [matAutocomplete]="skillac">
           <mat-autocomplete autoActiveFirstOption #skillac="matAutocomplete">
@@ -247,22 +274,23 @@
             </mat-option>
           </mat-autocomplete>
         </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="outline">
+        <mat-form-field class="col-xs-4 col-sm-4 col-md-4 col-lg-4" appearance="outline">
           <mat-label>Date</mat-label>
           <input matInput formControlName="level" placeholder="yourmail@example.com">
         </mat-form-field>
-        <button mat-stroked-button color="warn" (click)="deleteLink(i)">Delete</button>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><button mat-stroked-button color="warn" (click)="deleteLink(i)" type="button">Delete</button></div>
       </div>
       <!-- </mat-card> -->
     </div>
     <br>
-    <button mat-stroked-button color="primary" (click)="addLink()">Add New</button>
+    <button mat-stroked-button color="primary" (click)="addLink()" type="button">Add New</button>
     <br>
-    <br>
-    <mat-card-actions align="end">
+  </div>
+  <br>
+  <div class="align">
 
-      <button mat-raised-button color="primary">Build</button>
+    <button class="btn btn-lg button-margin-h section-bg">Build</button>
 
-    </mat-card-actions>
-  </form>
-</mat-card>
+  </div>
+</form>
+<!-- </mat-card> -->
