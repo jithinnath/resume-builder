@@ -19,7 +19,7 @@
                 </div>
                 <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
                   <img id="prev" src="#" alt="your image" style="height: 100px;width: 100px;"
-                    onerror="this.onerror=null;this.src='../assets/sample.jpg';" />
+                    onerror="this.onerror=null;this.src='../resume-builder/assets/sample.jpg';" />
                 </div>
               </div>
             </div>
@@ -267,7 +267,7 @@
 <!-- Links -->
 <mat-card>
   <mat-card-header>
-    <mat-card-title>Actions Buttons</mat-card-title>
+    <mat-card-title>Social Profiles</mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <div [formGroup]="fg(skill)" *ngFor="let skill of resumeForm.controls.socialLinks.controls let i = index">
@@ -296,7 +296,7 @@
     </mat-card-actions>
   </mat-card-content>
 </mat-card>
-  </form>
+
   <br>
   <div class="align">
 
@@ -305,4 +305,5 @@
   </div>
 
   <br>
+</form>
 </div>

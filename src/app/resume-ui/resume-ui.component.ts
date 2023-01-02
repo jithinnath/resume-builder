@@ -61,12 +61,12 @@ export class ResumeUIComponent implements OnInit {
   }
   addEmployment() {
     const empFormGroup = this.fb.group({
-      designation: ['', [Validators.required]],
-      compayName: ['', [Validators.required]],
-      city: ['', [Validators.required]],
-      from: ['', [Validators.required]],
+      designation: ['', []],
+      compayName: ['', []],
+      city: ['', []],
+      from: ['', []],
       to: ['',],
-      description: ['', [Validators.required]]
+      description: ['', []]
     })
 
     this.resumeForm.controls.employmentHistory.push(empFormGroup)
@@ -80,12 +80,12 @@ export class ResumeUIComponent implements OnInit {
 
   addEducation() {
     const educationFormGroup = this.fb.group({
-      designation: ['', [Validators.required]],
-      compayName: ['', [Validators.required]],
-      city: ['', [Validators.required]],
-      from: ['', [Validators.required]],
+      designation: ['', []],
+      compayName: ['', []],
+      city: ['', []],
+      from: ['', []],
       to: ['',],
-      description: ['', [Validators.required]]
+      description: ['', []]
     })
 
     this.resumeForm.controls.educations.push(educationFormGroup)
@@ -97,8 +97,8 @@ export class ResumeUIComponent implements OnInit {
 
   addSkill() {
     const skillFormGroup = this.fb.group({
-      name: ['', [Validators.required]],
-      level: ['', [Validators.required]],
+      name: ['', []],
+      level: ['', []],
     })
 
     this.resumeForm.controls.skills.push(skillFormGroup)
@@ -110,8 +110,8 @@ export class ResumeUIComponent implements OnInit {
 
   addLanguage() {
     const languageFormGroup = this.fb.group({
-      name: ['', [Validators.required]],
-      level: ['', [Validators.required]],
+      name: ['', []],
+      level: ['', []],
     })
 
     this.resumeForm.controls.languages.push(languageFormGroup)
@@ -125,8 +125,8 @@ export class ResumeUIComponent implements OnInit {
 
   addLink() {
     const languageFormGroup = this.fb.group({
-      name: ['', [Validators.required]],
-      level: ['', [Validators.required]],
+      name: ['', []],
+      level: ['', []],
     })
 
     this.resumeForm.controls.socialLinks.push(languageFormGroup)
