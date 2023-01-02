@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --configuration production --output-path docs --base-href /resume-builder/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "cp_index":"cp ./docs/index.html ./docs/404.html "
   },
   "private": true,
   "dependencies": {
