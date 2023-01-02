@@ -24,7 +24,7 @@ export class PdfMakeService {
 
   public createPdf(data: IResume) {
     this._data = data;
-    pdfMake.createPdf(this._dd()).open();
+    (window.navigator as any).userAgentData.mobile ? pdfMake.createPdf(this._dd()).download(): pdfMake.createPdf(this._dd()).open();
   }
 
   constructor(private dataService: ResumeDataService) {
