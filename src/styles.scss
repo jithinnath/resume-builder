@@ -120,7 +120,8 @@ body { margin: 0; font-family: 'Poppins';}
 
 
 mat-card-header{
-  background-color: mat.get-color-from-palette($my-primary, 'darker');
+  // background-color: mat.get-color-from-palette($my-primary, 'darker');
+  background-color: colors.$card-header-bg;
   border: 1px solid colors.$primary;
   border-radius: 4px 4px 0 0;
   border-bottom-width: 0;
@@ -146,4 +147,10 @@ mat-card{
 
 mat-expansion-panel{
   box-shadow: none;
+}
+
+mat-card-actions{
+  // button{
+  //   background-color: colors.$card-header-bg;
+  // }
 }
