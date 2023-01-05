@@ -7,7 +7,7 @@
     "build": "ng build --configuration production --output-path docs --base-href /resume-builder/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "cp_index":"cp ./docs/index.html ./docs/404.html "
+    "cp_index": "cp ./docs/index.html ./docs/404.html "
   },
   "private": true,
   "dependencies": {
@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "@angular/service-worker": "^15.0.0",
     "bootstrap": "^5.2.3",
     "bootstrap-sass": "^3.4.3",
     "html2canvas": "^1.4.1",
