@@ -5,6 +5,7 @@ import { Component, ElementRef, Renderer2, ViewChild, OnInit } from '@angular/co
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { PdfMakeService } from '../v1/pdf-make.service';
 import { Observable } from 'rxjs';
+import { backgroundImage } from 'html2canvas/dist/types/css/property-descriptors/background-image';
 
 export interface empDetails {
   id: number,
@@ -145,7 +146,7 @@ export class ResumeUIComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private pdfMake: PdfMakeService) { }
   ngOnInit(): void {
-
+    window.scrollTo(0,-100)
 
   }
 
@@ -187,8 +188,9 @@ export class ResumeUIComponent implements OnInit {
   onFileChange(event: Event) {
     const filex = (document.getElementById('image') as HTMLInputElement)?.files![0];
     this.getBase64(filex, (e: any) => this.imgBase64 = e.target.result)
-    const im = (document.getElementById('prev') as HTMLInputElement)
-    im.src = URL.createObjectURL(filex)
+    const im = (document.getElementById('avatar') as HTMLInputElement)
+    im.style.backgroundImage = `url(${URL.createObjectURL(filex)})`
+    //im.src = URL.createObjectURL(filex)
 
 
   }
@@ -202,12 +204,19 @@ export class ResumeUIComponent implements OnInit {
 
 
 
-  emptitle(emp:any){
+  emptitle(emp:any,code=0){
     const empx = this.fg(emp)
     if(!this.fg(emp)?.get('designation')?.value || !this.fg(emp).get('compayName')?.value){
-     return `Enter your employment details`
+     return code?`Enter your education details`:`Enter your employment details`
     }
     return  this.fg(emp).get('designation')?.value +' at ' +this.fg(emp).get('compayName')?.value
+  }
+
+  uploadImage(x:HTMLInputElement){
+    console.log('file input',x)
+    const k = (document.getElementById('image') as HTMLInputElement)
+    k.click();
+    k.focus();
   }
 
 }
