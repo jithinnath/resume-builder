@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672929843204,
+  "timestamp": 1673737489993,
   "index": "/resume-builder/index.html",
   "assetGroups": [
     {
@@ -13,12 +13,12 @@
       "urls": [
         "/resume-builder/favicon.ico",
         "/resume-builder/index.html",
-        "/resume-builder/main.11218f0baf4d4ffa.js",
+        "/resume-builder/main.0f1e29d45eeae6fb.js",
         "/resume-builder/manifest.webmanifest",
         "/resume-builder/polyfills.60e431facbbd2022.js",
         "/resume-builder/runtime.84d3fa85e16871a0.js",
         "/resume-builder/scripts.a6941e99b67c0784.js",
-        "/resume-builder/styles.aafaa2f718f2c4e4.css"
+        "/resume-builder/styles.04697512e5e34fc1.css"
       ],
       "patterns": []
     },
@@ -94,14 +94,14 @@
     "/resume-builder/assets/profileImg.jpg": "1eed30588bfe5a70387715219000db34ce4e7b78",
     "/resume-builder/assets/sample.jpg": "b1ea6499896b68748f1028ea974f9372034dc3ca",
     "/resume-builder/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/resume-builder/index.html": "f283a89f14d5f2a32ce393d93debd4197b788d37",
-    "/resume-builder/main.11218f0baf4d4ffa.js": "ea2c3d5d90a8cef07aa4209546aa440e03623422",
+    "/resume-builder/index.html": "35fece1ab6b2dc584932654c895c3b0cd2dae581",
+    "/resume-builder/main.0f1e29d45eeae6fb.js": "131351c8daac18d76d322949f4cc435b513a937d",
     "/resume-builder/manifest.webmanifest": "84835155d79674ab439d545c9627e13557926fbb",
     "/resume-builder/polyfills.60e431facbbd2022.js": "e85f84418318623f8a3579a7f68629d2b6897b2a",
     "/resume-builder/runtime.84d3fa85e16871a0.js": "0106beb51d1c5f1aa70579ab9dfa5173d42ae43f",
     "/resume-builder/sample.46da072dcc8752e6.jpg": "b1ea6499896b68748f1028ea974f9372034dc3ca",
     "/resume-builder/scripts.a6941e99b67c0784.js": "6769b8d5626e838193f1e922bf66cab75614cde5",
-    "/resume-builder/styles.aafaa2f718f2c4e4.css": "7df129f76286b77ccb847e0c2406ee6e0ab60eda"
+    "/resume-builder/styles.04697512e5e34fc1.css": "980b465746c1457faaf83b4785934bb202774fb0"
   },
   "navigationUrls": [
     {
