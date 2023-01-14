@@ -20,6 +20,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import { ResumeDashboardComponent } from './resume-dashboard/resume-dashboard.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 
 
 @NgModule({
@@ -51,6 +54,8 @@ import { ResumeDashboardComponent } from './resume-dashboard/resume-dashboard.co
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
+    MatIconModule,
+    MatTooltipModule
   ],
   providers: [{provide: MAT_DATE_LOCALE, useValue: 'en-GB'}],
   bootstrap: [AppComponent],

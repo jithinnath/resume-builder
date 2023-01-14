@@ -5,6 +5,7 @@ import {IResume} from './types';
 import {Component} from '@angular/core';
 import {PdfMakeService} from './v1/pdf-make.service';
 import {sample} from './resume-data';
+import { Route, Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,5 +23,8 @@ export class AppComponent  {
     this.pdfMake.createPdf(sample as IResume);
 
 
+  }
+  home(){
+    this.router.navigate(['resume-dashboard'])
   }
 }
