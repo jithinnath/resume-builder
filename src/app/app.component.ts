@@ -12,14 +12,14 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent  {
-  constructor(private pdfMake:PdfMakeService,private idb:ResumeIDBService) {
+  constructor(private pdfMake:PdfMakeService,private idb:ResumeIDBService,private router:Router) {
   }
 
   title = 'resumeBuilder';
 
   async downloadSample() {
-    await this.idb.openResumeDb();
-    this.idb.addResume({...sample,name:sample.personalDetails.name})
+    // await this.idb.openResumeDb();
+    // this.idb.addResume({...sample,name:sample.personalDetails.name})
     this.pdfMake.createPdf(sample as IResume);
 
 
