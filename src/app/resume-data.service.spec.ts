@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { ResumeDataService } from './resume-data.service';
+import {ResumeDataService} from './resume-data.service';
 
 describe('ResumeDataService', () => {
   let service: ResumeDataService;

@@ -1,15 +1,17 @@
 
-<mat-toolbar color="primary" class="sticky-toolbar"><span>Resume Builder</span>
-  <span class="example-spacer"></span>
-  <button mat-button (click)="downloadSample()">
-    Download Sample
-  </button>
-</mat-toolbar>
+<header>
+  <mat-toolbar color="primary" class="sticky-toolbar"><span>Resume Builder</span>
+    <span class="example-spacer"></span>
+    <button mat-button (click)="downloadSample()">
+      Download Sample
+    </button>
+  </mat-toolbar>
+</header>
 <main class="container-fluid mat-app-background">
-  <div class="h1 padding">Build Your Resume</div>
-  <app-resume-ui></app-resume-ui>
+  <div class="toolbar-hidden-space"></div>
+  <router-outlet></router-outlet>
 </main>
-<footer><mat-toolbar color="accent" style="height: 100px;">
+<footer><mat-toolbar color="accent">
   <span>created by &copy;Jinn </span>&nbsp;
   <a href="https://github.com/jithinnath">GitHub</a>
 </mat-toolbar></footer>

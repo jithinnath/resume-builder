@@ -1,15 +1,12 @@
-import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { sample, config } from './resume-data';
+import {Injectable} from '@angular/core';
+import {of} from 'rxjs';
+import {sample, config} from './resume-data';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ResumeDataService {
-
-  constructor() { }
-
-  getResumeData(){
+  getResumeData() {
     return sample;
   }
 
@@ -17,7 +14,7 @@ export class ResumeDataService {
     return config;
   }
 
-  getServer(){
-    return `https://jithinnath.github.io/resume-builder/`
+  getServer() {
+    return `https://jithinnath.github.io/resume-builder/`;
   }
 }

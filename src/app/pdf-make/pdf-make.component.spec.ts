@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { PdfMakeComponent } from './pdf-make.component';
+import {PdfMakeComponent} from './pdf-make.component';
 
 describe('PdfMakeComponent', () => {
   let component: PdfMakeComponent;
@@ -8,9 +8,9 @@ describe('PdfMakeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PdfMakeComponent ]
+      declarations: [PdfMakeComponent],
     })
-    .compileComponents();
+        .compileComponents();
 
     fixture = TestBed.createComponent(PdfMakeComponent);
     component = fixture.componentInstance;

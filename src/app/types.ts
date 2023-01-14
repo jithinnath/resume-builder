@@ -69,3 +69,8 @@ export interface IPersonal {
   address: string | null,
   profileDescription: string | null,
 }
+
+export interface IResumeDB extends IResume {
+  name:string,
+  id:number
+}

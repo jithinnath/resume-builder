@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ResumeCanvasComponent } from './resume-canvas.component';
+import {ResumeCanvasComponent} from './resume-canvas.component';
 
 describe('ResumeCanvasComponent', () => {
   let component: ResumeCanvasComponent;
@@ -8,9 +8,9 @@ describe('ResumeCanvasComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResumeCanvasComponent ]
+      declarations: [ResumeCanvasComponent],
     })
-    .compileComponents();
+        .compileComponents();
 
     fixture = TestBed.createComponent(ResumeCanvasComponent);
     component = fixture.componentInstance;

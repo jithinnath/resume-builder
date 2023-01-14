@@ -162,6 +162,10 @@
 //     background-image: url('../../assets/sample.jpg');
 
 // }
+.padding{
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
 
 .avatar-container {
   button {
@@ -182,4 +186,8 @@
     }
   }
 
+}
+
+.toolbar-hidden-space{
+  height: 55px;
 }

@@ -117,20 +117,24 @@ body { margin: 0; font-family: 'Poppins';}
   padding: 16px;
 }
 
-
+mat-card{
+  box-shadow: none !important;
+  border: 1px solid colors.$primary !important;
+  border-radius: 4px 4px 0 0 !important;
+}
 
 mat-card-header{
   // background-color: mat.get-color-from-palette($my-primary, 'darker');
   background-color: colors.$card-header-bg;
-  border: 1px solid colors.$primary;
-  border-radius: 4px 4px 0 0;
-  border-bottom-width: 0;
+  // border: 1px solid colors.$primary;
+  // border-radius: 4px 4px 0 0;
+  // border-bottom-width: 0;
   // border-bottom-color: colors.$accent;
 }
 mat-card-content{
-  border: 1px solid colors.$primary;
-  border-radius: 0 0 4px 4px;
-  border-top-width: 0;
+  // border: 1px solid colors.$primary;
+  // border-radius: 0 0 4px 4px;
+  // border-top-width: 0;
 
 
     mat-accordion{
@@ -149,8 +153,4 @@ mat-expansion-panel{
   box-shadow: none;
 }
 
-mat-card-actions{
-  // button{
-  //   background-color: colors.$card-header-bg;
-  // }
-}
+

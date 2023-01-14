@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ResumeUIComponent } from './resume-ui.component';
+import {ResumeUIComponent} from './resume-ui.component';
 
 describe('ResumeUIComponent', () => {
   let component: ResumeUIComponent;
@@ -8,9 +8,9 @@ describe('ResumeUIComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResumeUIComponent ]
+      declarations: [ResumeUIComponent],
     })
-    .compileComponents();
+        .compileComponents();
 
     fixture = TestBed.createComponent(ResumeUIComponent);
     component = fixture.componentInstance;
