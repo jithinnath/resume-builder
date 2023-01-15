@@ -1,14 +1,6 @@
-import {
-  IResume,
-  IDocConfig,
-  IEmployment,
-  IEducation,
-  ISkill,
-  ILanguage,
-  ISocialLink,
-} from './../types';
-import {ResumeDataService} from './../resume-data.service';
-import {Injectable} from '@angular/core';
+import { IResume, IDocConfig, IEmployment, IEducation, ISkill, ILanguage, ISocialLink } from './../types';
+import { ResumeDataService } from './../resume-data.service';
+import { Injectable } from '@angular/core';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 import { formatDate } from '@angular/common';
@@ -19,14 +11,16 @@ import { formatDate } from '@angular/common';
 })
 export class PdfMakeService {
   private server: string = this.dataService.getServer();
-  private _data!: IResume;// this.dataService.getResumeData() as IResume;
+  private _data!: IResume; // this.dataService.getResumeData() as IResume;
   private _config: IDocConfig = this.dataService.getConfig() as IDocConfig;
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  public createPdf(data: IResume,cacheData:()=>void = ()=>{}) {
+  public createPdf(data: IResume, cacheData: () => void = () => {}) {
     this._data = data;
-    (window.navigator as any).userAgentData.mobile ? pdfMake.createPdf(this._dd()).download(): pdfMake.createPdf(this._dd()).open();
-    cacheData()
+    (window.navigator as any).userAgentData.mobile
+      ? pdfMake.createPdf(this._dd()).download()
+      : pdfMake.createPdf(this._dd()).open();
+    cacheData();
   }
 
   constructor(private dataService: ResumeDataService) {
@@ -53,7 +47,7 @@ export class PdfMakeService {
       },
       content: this._buildContent(),
       images: {
-        profileImg: this.getImage(this._data?.personalDetails?.profileImg||''),
+        profileImg: this.getImage(this._data?.personalDetails?.profileImg || ''),
       },
       styles: {},
     };
@@ -63,13 +57,13 @@ export class PdfMakeService {
   private _profileDetails() {
     return {
       stack: [
-        {text: '', fontSize: this._config.jobTitleFontSize},
-        {text: this._data?.personalDetails?.jobTitle, fontSize: this._config.jobTitleFontSize},
-        {text: '', fontSize: this._config.jobTitleFontSize},
-        {text: this._data?.personalDetails?.email},
-        {text: this._data?.personalDetails?.mobile},
-        {text: '\n'},
-        {text: this._data?.personalDetails?.address},
+        { text: '', fontSize: this._config.jobTitleFontSize },
+        { text: this._data?.personalDetails?.jobTitle, fontSize: this._config.jobTitleFontSize },
+        { text: '', fontSize: this._config.jobTitleFontSize },
+        { text: this._data?.personalDetails?.email },
+        { text: this._data?.personalDetails?.mobile },
+        { text: '\n' },
+        { text: this._data?.personalDetails?.address },
       ],
     };
   }
@@ -82,7 +76,7 @@ export class PdfMakeService {
         heights: [50, 100],
         body: [
           [
-            {image: 'profileImg', fit: this._config.imageFit},
+            { image: 'profileImg', fit: this._config.imageFit },
             {
               text: this._data?.personalDetails?.name,
               bold: false,
@@ -93,7 +87,7 @@ export class PdfMakeService {
             this._profileDetails(),
             {
               stack: [
-                {text: 'Profile', fontSize: this._config.profileTextFontSize},
+                { text: 'Profile', fontSize: this._config.profileTextFontSize },
                 {
                   text: this._data?.personalDetails?.profileDescription,
                   fontSize: this._config.fontSize,
@@ -113,15 +107,17 @@ export class PdfMakeService {
     return [
       this._userInfoTable(),
       {
-        canvas: [{
-          type: 'line',
-          x1: 5,
-          y1: 25,
-          x2: 550,
-          y2: 25,
-          lineColor: this._config.dividerLineColor,
-          lineWidth: 1,
-        }],
+        canvas: [
+          {
+            type: 'line',
+            x1: 5,
+            y1: 25,
+            x2: 550,
+            y2: 25,
+            lineColor: this._config.dividerLineColor,
+            lineWidth: 1,
+          },
+        ],
       },
       '\n\n',
       {
@@ -130,16 +126,14 @@ export class PdfMakeService {
           {
             width: '68%',
             stack: [
-              this._data?.employmentHistory?.length ?
-                {
-                  text: 'Employment History',
-                  fontSize: this._config.headerFontSize,
-                } :
-                '',
+              this._data?.employmentHistory?.length
+                ? {
+                    text: 'Employment History',
+                    fontSize: this._config.headerFontSize,
+                  }
+                : '',
               ...this._employmentStack(this._data?.employmentHistory),
-              this._data?.educations?.length ?
-                {text: 'Education', fontSize: this._config.headerFontSize} :
-                '',
+              this._data?.educations?.length ? { text: 'Education', fontSize: this._config.headerFontSize } : '',
               ...this._employmentStack(this._data?.educations),
             ],
           },
@@ -151,16 +145,10 @@ export class PdfMakeService {
                 stack: [this._buildBox(this._data?.skills, 'Skills'), '\n'],
               },
               {
-                stack: [
-                  this._buildBox(this._data?.languages, 'Languages'),
-                  '\n',
-                ],
+                stack: [this._buildBox(this._data?.languages, 'Languages'), '\n'],
               },
               {
-                stack: [
-                  this._buildBox(this._data?.socialLinks, 'Social Links'),
-                  '\n',
-                ],
+                stack: [this._buildBox(this._data?.socialLinks, 'Social Links'), '\n'],
               },
             ],
           },
@@ -172,22 +160,22 @@ export class PdfMakeService {
   private _drawBox(rows: any[][] = [], width: any[] = [70, 80]) {
     return {
       layout: {
-        hLineWidth: function(i: any, node: any) {
+        hLineWidth: function (i: any, node: any) {
           return 0;
         },
-        vLineWidth: function(i: any, node: any) {
+        vLineWidth: function (i: any, node: any) {
           return 0;
         },
-        paddingLeft: function(i: number, node: any) {
+        paddingLeft: function (i: number, node: any) {
           return 8;
         },
-        paddingRight: function(i: number, node: any) {
+        paddingRight: function (i: number, node: any) {
           return 8;
         },
-        paddingTop: function(i: number, node: any) {
+        paddingTop: function (i: number, node: any) {
           return 2;
         },
-        paddingBottom: function(i: number, node: any) {
+        paddingBottom: function (i: number, node: any) {
           if (i === node.table.body.length - 1) {
             return 8;
           }
@@ -206,7 +194,7 @@ export class PdfMakeService {
 
   private _employmentStack(employments: IEmployment[] | IEducation[]) {
     const _stack: any[] = [];
-    employments.forEach((employment) => {
+    employments.forEach(employment => {
       _stack.push({
         text: `${employment.designation} at ${employment.compayName}`,
         style: {
@@ -216,15 +204,15 @@ export class PdfMakeService {
           fontSize: this._config.subHeaderFontSize,
         },
       });
-      _stack.push({text: ''});
+      _stack.push({ text: '' });
       _stack.push({
         text: `${this._formatDate(employment.from)} - ${this._formatDate(employment.to)}`,
         fontSize: this._config.subHeaderFontSize,
       });
-      _stack.push({text: ''});
+      _stack.push({ text: '' });
       const empDescriptions = employment.description.split('\n');
-      empDescriptions.forEach((des) => {
-        _stack.push({text: des});
+      empDescriptions.forEach(des => {
+        _stack.push({ text: des });
       });
       _stack.push('\n');
     });
@@ -235,36 +223,31 @@ export class PdfMakeService {
   private _buildBox(skills: ISkill[] | ILanguage[] | ISocialLink[], sectionName = '') {
     const _stack: any[] = [];
     if (!skills.length) return [];
-    _stack.push([
-      {text: sectionName, fontSize: this._config.headerFontSize, colSpan: 2},
-      '',
-    ]);
+    _stack.push([{ text: sectionName, fontSize: this._config.headerFontSize, colSpan: 2 }, '']);
     if (sectionName === 'Social Links') {
-      skills.forEach((skill) => {
-        _stack.push([{text: skill.name, colSpan: 2}, '']);
-        _stack.push([{text: skill.level, alignment: 'left', style: {fontSize: 8}, colSpan: 2}, '']);
+      skills.forEach(skill => {
+        _stack.push([{ text: skill.name, colSpan: 2 }, '']);
+        _stack.push([{ text: skill.level, alignment: 'left', style: { fontSize: 8 }, colSpan: 2 }, '']);
       });
     } else {
-      skills.forEach((skill) => {
-        _stack.push([skill.name, {text: skill.level, alignment: 'right'}]);
+      skills.forEach(skill => {
+        _stack.push([skill.name, { text: skill.level, alignment: 'right' }]);
       });
     }
-
 
     return this._drawBox(_stack);
   }
 
-  fontSizeforName = (name: string) => name.length < 12 ? 64 : name.length < 20 ? 30 : name.length < 30 ? 40 : 30;
+  fontSizeforName = (name: string) => (name.length < 12 ? 64 : name.length < 20 ? 30 : name.length < 30 ? 40 : 30);
 
-
-  getImage(image:string) {
+  getImage(image: string) {
     if (image.startsWith('data:')) {
       return image;
     }
     return `${this.server}/${image}`;
   }
 
- private _formatDate(date:string){
-    return formatDate(date,'MMM YYYY','en-IN')
+  private _formatDate(date: string) {
+    return formatDate(date, 'MMM YYYY', 'en-IN');
   }
 }

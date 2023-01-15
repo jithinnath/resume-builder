@@ -8,42 +8,39 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-resume-dashboard',
   templateUrl: './resume-dashboard.component.html',
-  styleUrls: ['./resume-dashboard.component.scss']
+  styleUrls: ['./resume-dashboard.component.scss'],
 })
 export class ResumeDashboardComponent {
   resumes$: Observable<IResumeDB[]> | null = null;
   constructor(private idbResume: ResumeIDBService, private router: Router, private dashboard: DashboardService) {
-    this.openDb()
+    this.openDb();
   }
-
-
-
 
   async openDb() {
     await this.idbResume.openResumeDb();
-    this.resumes$ = this.idbResume.getAllResumes().pipe(tap(x => {
-      console.log(x);
-      if (!x?.length) {
-        this.router.navigate(['create-resume'])
-      }
-    })) as Observable<IResumeDB[]>
+    this.resumes$ = this.idbResume.getAllResumes().pipe(
+      tap(x => {
+        console.log(x);
+        if (!x?.length) {
+          this.router.navigate(['create-resume']);
+        }
+      })
+    ) as Observable<IResumeDB[]>;
   }
 
   addNewData() {
-    this.router.navigate(['create-resume'])
+    this.router.navigate(['create-resume']);
   }
   download(resume: IResumeDB) {
-    this.dashboard.download(resume)
-
+    this.dashboard.download(resume);
   }
 
   delete(resume: IResumeDB) {
-    this.dashboard.delete(resume)
-    this.resumes$ = this.idbResume.getAllResumes() as Observable<IResumeDB[]>
-
+    this.dashboard.delete(resume);
+    this.resumes$ = this.idbResume.getAllResumes() as Observable<IResumeDB[]>;
   }
 
-  edit(data:IResumeDB){
+  edit(data: IResumeDB) {
     this.dashboard.edit(data);
   }
 }

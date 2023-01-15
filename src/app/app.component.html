@@ -1,22 +1,26 @@
 <header>
-  <mat-toolbar color="primary" class="sticky-toolbar"><span>
-        <button mat-mini-fab color="primary"
+  <mat-toolbar color="primary" class="sticky-toolbar"
+    ><span>
+      <button
+        mat-mini-fab
+        color="primary"
         aria-label="Example icon button with a home icon"
         (click)="home()"
         matTooltip="Goto Dashboard">
         <mat-icon>home</mat-icon>
-      </button></span>&nbsp;<span>Resume Builder</span>
+      </button></span
+    >&nbsp;<span>Resume Builder</span>
     <span class="example-spacer"></span>
-    <button mat-button (click)="downloadSample()">
-      Download Sample
-    </button>
+    <button mat-button (click)="downloadSample()">Download Sample</button>
   </mat-toolbar>
 </header>
 <main class="container-fluid mat-app-background">
   <div class="toolbar-hidden-space"></div>
   <router-outlet></router-outlet>
 </main>
-<footer><mat-toolbar color="accent">
+<footer>
+  <mat-toolbar color="accent">
     <span>created by &copy;Jinn </span>&nbsp;
     <a href="https://github.com/jithinnath">GitHub</a>
-  </mat-toolbar></footer>
+  </mat-toolbar>
+</footer>

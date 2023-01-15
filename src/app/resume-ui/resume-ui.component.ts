@@ -1,27 +1,24 @@
 import { ResumeIDBService } from './../resume-idb.service';
 import { Resume } from './../resume';
-import { IEmployment, IResume, IResumeDB } from './../types';
-import { coerceStringArray } from '@angular/cdk/coercion';
-import { Component, ElementRef, Renderer2, ViewChild, OnInit } from '@angular/core';
+import { IResume, IResumeDB } from './../types';
+import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { PdfMakeService } from '../v1/pdf-make.service';
-import { Observable } from 'rxjs';
-import { backgroundImage } from 'html2canvas/dist/types/css/property-descriptors/background-image';
 import { Router } from '@angular/router';
 
 export interface empDetails {
-  id: number,
-  rawFormValue: any,
+  id: number;
+  rawFormValue: any;
 }
 
 export interface edDeatails {
-  id: number,
-  designation: string,
-  compayName: string,
-  city: string,
-  from: string,
-  to: string,
-  description: string
+  id: number;
+  designation: string;
+  compayName: string;
+  city: string;
+  from: string;
+  to: string;
+  description: string;
 }
 
 @Component({
@@ -33,7 +30,6 @@ export class ResumeUIComponent implements OnInit {
   skillOptions: string[] = ['Angular', 'Java', 'Android'];
   languageOptions: string[] = ['English', 'Hindi', 'Malayalam'];
   linkOptions: string[] = ['GitHub', 'LinkedIn', 'Stackoverflow'];
-
 
   resumeForm = new FormGroup({
     id: new FormControl(0),
@@ -53,7 +49,6 @@ export class ResumeUIComponent implements OnInit {
     languages: new FormArray<any>([]),
     socialLinks: new FormArray<any>([]),
   });
-
 
   fg(form: any) {
     return form as FormGroup;
@@ -117,7 +112,6 @@ export class ResumeUIComponent implements OnInit {
     this.resumeForm.controls.languages.removeAt(i);
   }
 
-
   addLink() {
     const languageFormGroup = this.fb.group({
       name: ['', []],
@@ -131,19 +125,17 @@ export class ResumeUIComponent implements OnInit {
     this.resumeForm.controls.socialLinks.removeAt(i);
   }
 
-
-  constructor(private fb: FormBuilder, private pdfMake: PdfMakeService, private idbResume: ResumeIDBService,
-    private router: Router) {
-
-  }
+  constructor(
+    private fb: FormBuilder,
+    private pdfMake: PdfMakeService,
+    private idbResume: ResumeIDBService,
+    private router: Router
+  ) {}
   ngOnInit(): void {
     window.scrollTo(0, -100);
     this.openDB();
     const data = history.state;
-    if(data&&data?.name&&data?.id)
-      this.editDashboardData(data);
-
-
+    if (data && data?.name && data?.id) this.editDashboardData(data);
   }
 
   async openDB() {
@@ -152,7 +144,6 @@ export class ResumeUIComponent implements OnInit {
 
   build(data: any) {
     console.log('form data', data);
-
 
     if (!this.resumeForm.valid) {
       this.resumeForm.markAllAsTouched();
@@ -164,33 +155,27 @@ export class ResumeUIComponent implements OnInit {
     this._createPdfcall(data);
   }
 
-
   private _createPdfcall(data: any) {
     if (data?.id === 0) {
-      delete data.id
+      delete data.id;
     }
 
-       data.name =data.personalDetails.name
+    data.name = data.personalDetails.name;
 
     const resumData: Resume<string> = new Resume(data as IResume);
     resumData.personalDetails.profileImg = this.imgBase64;
     this.pdfMake.createPdf(resumData, () => {
-      data?.id ?
-        this.idbResume.updateResume(data)
-        :
-        this.idbResume.addResume(data)
+      data?.id ? this.idbResume.updateResume(data) : this.idbResume.addResume(data);
 
-        this.router.navigate(['resume-dashboard']);
-    })
-
+      this.router.navigate(['resume-dashboard']);
+    });
   }
-
 
   private imgBase64 = '';
   onFileChange(event: Event) {
     const filex: File = (document.getElementById('image') as HTMLInputElement)?.files![0];
-    this.getBase64(filex, (e: any) => this.imgBase64 = e.target.result);
-    const im = (document.getElementById('avatar') as HTMLInputElement);
+    this.getBase64(filex, (e: any) => (this.imgBase64 = e.target.result));
+    const im = document.getElementById('avatar') as HTMLInputElement;
     im.style.backgroundImage = `url(${URL.createObjectURL(filex)})`;
     // im.src = URL.createObjectURL(filex)
   }
@@ -200,7 +185,6 @@ export class ResumeUIComponent implements OnInit {
     reader.readAsDataURL(file);
     reader.onload = callback;
   }
-
 
   emptitle(emp: any, code = 0) {
     const empx = this.fg(emp);
@@ -212,25 +196,22 @@ export class ResumeUIComponent implements OnInit {
 
   uploadImage(x: HTMLInputElement) {
     console.log('file input', x);
-    const k = (document.getElementById('image') as HTMLInputElement);
+    const k = document.getElementById('image') as HTMLInputElement;
     k.click();
     k.focus();
   }
 
-
   editDashboardData(data: IResumeDB) {
-
-    if (!data)
-      throw console.error('No data present');
-      this.imgBase64 = data.personalDetails.profileImg || ''
-      const im = (document.getElementById('avatar') as HTMLInputElement);
+    if (!data) throw console.error('No data present');
+    this.imgBase64 = data.personalDetails.profileImg || '';
+    const im = document.getElementById('avatar') as HTMLInputElement;
     im.style.backgroundImage = `url(${this.imgBase64})`;
 
-    data?.skills?.forEach(skill => this.addSkill())
-    data?.educations?.forEach(ed => this.addEducation())
+    data?.skills?.forEach(skill => this.addSkill());
+    data?.educations?.forEach(ed => this.addEducation());
     data?.employmentHistory?.forEach(em => this.addEmployment());
     data?.languages?.forEach(l => this.addLanguage());
-    data?.socialLinks?.forEach(s => this.addLink())
+    data?.socialLinks?.forEach(s => this.addLink());
     this.resumeForm.patchValue({
       id: data.id,
       name: data.name,
@@ -248,16 +229,9 @@ export class ResumeUIComponent implements OnInit {
       languages: data?.languages,
       employmentHistory: data?.employmentHistory,
       educations: data?.educations,
-    })
+    });
 
-
-
-    this.resumeForm.controls.skills.patchValue(data?.skills)
-    console.log(this.resumeForm.getRawValue())
-
-
+    this.resumeForm.controls.skills.patchValue(data?.skills);
+    console.log(this.resumeForm.getRawValue());
   }
-
 }
-
-

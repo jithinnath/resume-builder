@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 import jsPDF from 'jspdf';
 // const pdfMake = require('pdfmake/build/pdfmake.js');
@@ -13,7 +13,6 @@ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
   templateUrl: './resume-canvas.component.html',
   styleUrls: ['./resume-canvas.component.scss'],
 })
-
 export class ResumeCanvasComponent {
   @ViewChild('resume') res!: ElementRef;
   private jspdf = new jsPDF();
@@ -21,7 +20,6 @@ export class ResumeCanvasComponent {
   constructor() {
     (window as any).pdfMake.vfs = pdfFonts.pdfMake.vfs;
   }
-
 
   submit() {
     (<any>pdfMake).fonts = {
@@ -31,10 +29,8 @@ export class ResumeCanvasComponent {
         // italics: 'Poppins-Italic.ttf',
         // bolditalics: 'Poppins-BoldItalic.ttf'
         normal: 'http://localhost:4200/assets/fonts/Poppins-Regular.ttf',
-
       },
     };
-
 
     const dd: any = {
       defaultStyle: {
@@ -50,27 +46,29 @@ export class ResumeCanvasComponent {
             {
               width: '30%',
               stack: [
-                {image: 'profileImg', fit: [100, 100]},
-                {text: 'Full Stack Developer', fontSize: 15},
-                {text: 'jitinnath@gmail.com', fontSize: 10},
-                {text: '7738663466', fontSize: 10},
-                {text: '', fontSize: 10},
-                {text: 'Bengaluru,India', fontSize: 10},
+                { image: 'profileImg', fit: [100, 100] },
+                { text: 'Full Stack Developer', fontSize: 15 },
+                { text: 'jitinnath@gmail.com', fontSize: 10 },
+                { text: '7738663466', fontSize: 10 },
+                { text: '', fontSize: 10 },
+                { text: 'Bengaluru,India', fontSize: 10 },
               ],
             },
             {
               width: '70%',
               stack: [
-                {text: 'Jithin Nath', fontSize: 64},
-                {text: 'Profile', fontSize: 20},
-                {text: 'Experienced web developer with a history of design collaboration offers sophisticated coding and troubleshooting. Always ensure bringing projects to completion well ahead of deadline while exceeding functional expectation. Proactive problem-solver with exceptional time-management and organization skills.', fontSize: 10},
+                { text: 'Jithin Nath', fontSize: 64 },
+                { text: 'Profile', fontSize: 20 },
+                {
+                  text: 'Experienced web developer with a history of design collaboration offers sophisticated coding and troubleshooting. Always ensure bringing projects to completion well ahead of deadline while exceeding functional expectation. Proactive problem-solver with exceptional time-management and organization skills.',
+                  fontSize: 10,
+                },
               ],
             },
-
           ],
           columnGap: 10,
         },
-        {canvas: [{type: 'line', x1: -100, y1: 50, x2: 1000, y2: 50}]},
+        { canvas: [{ type: 'line', x1: -100, y1: 50, x2: 1000, y2: 50 }] },
       ],
       styles: {
         red: {
@@ -96,7 +94,6 @@ export class ResumeCanvasComponent {
       },
     };
     pdfMake.createPdf(dd).open();
-
 
     // this.jspdf.html(this.res.nativeElement, {
     //   callback: (pdf) => {

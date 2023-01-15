@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 (<any>pdfMake).vfs = pdfFonts.pdfMake.vfs;
@@ -32,9 +32,7 @@ export class PdfMakeComponent implements OnInit {
       pageSize: 'A4',
       pageOrientation: 'portrait',
       pageMargins: [20, 20, 20, 10],
-      content: [
-        {text: 'Full Stack Developer', fontSize: 15},
-      ],
+      content: [{ text: 'Full Stack Developer', fontSize: 15 }],
     };
     pdfMake.createPdf(dd).open();
   }

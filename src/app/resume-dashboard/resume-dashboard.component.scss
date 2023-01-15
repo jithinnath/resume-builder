@@ -1,16 +1,12 @@
-
-
-
-.dashboard{
+.dashboard {
   min-height: calc(100vh - 55px);
   width: 100%;
-a{
-  font-size: 0.6em;
+  a {
+    font-size: 0.6em;
+  }
 }
 
-}
-
-.grid-container{
+.grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
@@ -22,7 +18,7 @@ a{
 }
 
 @media (max-width: 576px) {
-  .grid-container{
+  .grid-container {
     display: grid;
     grid-template-columns: 1fr;
     gap: 8px;

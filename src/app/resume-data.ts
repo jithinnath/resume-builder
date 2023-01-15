@@ -1,9 +1,6 @@
-import {IResume} from './types';
+import { IResume } from './types';
 
-export class ResumeData {
-
-}
-
+export class ResumeData {}
 
 export const config = {
   fontSize: 10,
@@ -18,7 +15,6 @@ export const config = {
   subHeaderColor: '#fcfcfc',
   socialLinksFontSize: 8,
   imageFit: [100, 100],
-
 };
 
 export const sample = {
@@ -58,7 +54,7 @@ export const sample = {
       compayName: 'Tata Consultancy Services',
       city: 'Mumbai',
       from: new Date('2015-12-07').toISOString(),
-      to:  new Date('2019-10-15').toISOString(),
+      to: new Date('2019-10-15').toISOString(),
       description: `Worked on troubleshooting and debugging various production issues.
       Worked on production defects and production deployments.
       Automated multiple manual tasks, where the support team usually face
@@ -70,7 +66,7 @@ export const sample = {
       designation: 'Bachelor of Technology',
       compayName: 'Govt College of Engineering Kannur',
       address: 'Kannur, Kerala',
-      from:new Date('2011-06-01').toISOString(),
+      from: new Date('2011-06-01').toISOString(),
       to: new Date('2015-05-31').toISOString(),
       description: `Graduated in Electronics and Communication with First class`,
     },
@@ -101,8 +97,5 @@ export const sample = {
       level: 'https://github.com/jithinnath',
     },
   ],
-  certifications: [
-  ],
+  certifications: [],
 };
-
-
