@@ -1,4 +1,3 @@
-import { IResume } from './types';
 
 export class ResumeData {}
 

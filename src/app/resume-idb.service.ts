@@ -1,7 +1,6 @@
-import { IResume } from './types';
-import { IndexDBService } from './index-db.service';
 import { Injectable } from '@angular/core';
-import { from, Observable } from 'rxjs';
+import { from } from 'rxjs';
+import { IndexDBService } from './index-db.service';
 
 @Injectable({
   providedIn: 'root',

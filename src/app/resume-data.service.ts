@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { sample, config } from './resume-data';
+import { config, sample } from './resume-data';
 
 @Injectable({
   providedIn: 'root',

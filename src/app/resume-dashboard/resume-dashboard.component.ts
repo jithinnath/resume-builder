@@ -1,9 +1,9 @@
-import { DashboardService } from './../dashboard.service';
-import { IResumeDB } from './../types';
-import { map, Observable, tap } from 'rxjs';
-import { ResumeIDBService } from './../resume-idb.service';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable, tap } from 'rxjs';
+import { DashboardService } from './../dashboard.service';
+import { ResumeIDBService } from './../resume-idb.service';
+import { IResumeDB } from './../types';
 
 @Component({
   selector: 'app-resume-dashboard',

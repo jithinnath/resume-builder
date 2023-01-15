@@ -5,6 +5,7 @@ import jsPDF from 'jspdf';
 // const pdfMake = require('pdfmake/build/pdfmake.js');
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+import { TDocumentDefinitions } from 'pdfmake/interfaces';
 (<any>pdfMake).vfs = pdfFonts.pdfMake.vfs;
 // import 'pdfmake/build/vfs_fonts';
 
@@ -32,7 +33,7 @@ export class ResumeCanvasComponent {
       },
     };
 
-    const dd: any = {
+    const dd: TDocumentDefinitions = {
       defaultStyle: {
         font: 'poppins',
         margin: [10, 10, 10, 10],
