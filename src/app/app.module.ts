@@ -22,9 +22,10 @@ import { ResumeDashboardComponent } from './resume-dashboard/resume-dashboard.co
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { TemplateDashboardComponent } from './template-dashboard/template-dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, ResumeCanvasComponent, PdfMakeComponent, ResumeUIComponent, ResumeDashboardComponent],
+  declarations: [AppComponent, ResumeCanvasComponent, PdfMakeComponent, ResumeUIComponent, ResumeDashboardComponent, TemplateDashboardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

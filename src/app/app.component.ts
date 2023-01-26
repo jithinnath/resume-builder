@@ -1,7 +1,7 @@
 import { ResumeIDBService } from './resume-idb.service';
 import { IResume } from './types';
 // import { PdfMakeService } from './pdf-make.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PdfMakeService } from './v1/pdf-make.service';
 import { sample } from './resume-data';
 import { Router } from '@angular/router';
@@ -10,8 +10,12 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(private pdfMake: PdfMakeService, private idb: ResumeIDBService, private router: Router) {}
+  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
+  ngOnInit(): void {
+    // this.pdfMake.createPdf(sample as IResume);
+  }
 
   title = 'resumeBuilder';
 

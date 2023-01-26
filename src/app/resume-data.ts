@@ -15,6 +15,99 @@ export const config = {
   socialLinksFontSize: 8,
   imageFit: [100, 100],
 };
+export const configTemplate2 = {
+
+  imageFit: [50, 50],
+
+  //
+  mainHeader:{
+    fontSize:20,
+    color:'#343a40',
+    fillColor:'#ffffff',
+    bold:false
+  },
+  header:{
+    fontSize:18,
+    color:'#343a40',
+    fillColor:'#ffffff',
+    bold:false
+  },
+  subHeader:{
+    fontSize:12,
+    color:'#343a40',
+    fillColor:'#ffffff',
+    bold:false
+  },
+  subHeader2:{
+    fontSize:10,
+    color:'#343a40',
+    fillColor:'#ffffff',
+    bold:false
+  },
+  normalText:{
+    fontSize:10,
+    color:'#343a40',
+    fillColor:'#ffffff'
+  },
+  color:{
+    accent:'#448aff'
+  },
+  list:true,
+  skillLines:{
+    gap:2,
+    color:'#448aff',
+    gapColor:'#ffffff',
+    bg:'#eeeeee'
+  }
+};
+
+export const configTemplate3 = {
+
+  imageFit: [100,300],
+
+  //
+  mainHeader:{
+    fontSize:20,
+    color:'#343a40',
+    fillColor:'#ffffff',
+    bold:false
+  },
+  header:{
+    fontSize:18,
+    color:'#343a40',
+    fillColor:'#ffffff',
+    bold:false
+  },
+  subHeader:{
+    fontSize:12,
+    color:'#343a40',
+    fillColor:'#ffffff',
+    bold:false
+  },
+  subHeader2:{
+    fontSize:10,
+    color:'#343a40',
+    fillColor:'#ffffff',
+    bold:false
+  },
+  normalText:{
+    fontSize:10,
+    color:'#343a40',
+    fillColor:'#ffffff'
+  },
+  color:{
+    accent:'#9b9bb3'
+  },
+  list:true,
+  skillLines:{
+    gap:2,
+    color:'#9b9bb3',
+    gapColor:'#ffffff',
+    bg:'#CCCCCC'
+  }
+};
+
+
 
 export const sample = {
   personalDetails: {
@@ -78,6 +171,14 @@ export const sample = {
     {
       name: 'Spring Boot',
       level: 'Professional',
+    },
+    {
+      name: 'Oracle',
+      level: 'Intermediate',
+    },
+    {
+      name: 'MongoDB',
+      level: 'Beginner',
     },
   ],
   languages: [
