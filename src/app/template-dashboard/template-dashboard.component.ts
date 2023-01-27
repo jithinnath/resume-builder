@@ -9,21 +9,21 @@ import { Resume } from '../resume';
 export const templates = [
   {
     tname: 'Template1',
-    url: '../../assets/pdf-samples/template1.pdf',
+    url: '../../resume-builder/assets/pdf-samples/template1.pdf',
     id: 0,
-    img: '../../assets/pdf-samples/prev-images/template1.PNG',
+    img: '../../resume-builder/assets/pdf-samples/prev-images/template1.PNG',
   },
   {
     tname: 'Template2',
-    url: '../../assets/pdf-samples/template2.pdf',
+    url: '../../resume-builder/assets/pdf-samples/template2.pdf',
     id: 1,
-    img: '../../assets/pdf-samples/prev-images/template2.PNG',
+    img: '../../resume-builder/assets/pdf-samples/prev-images/template2.PNG',
   },
   {
     tname: 'Template3',
-    url: '../../assets/pdf-samples/template3.pdf',
+    url: '../../resume-builder/assets/pdf-samples/template3.pdf',
     id: 2,
-    img: '../../assets/pdf-samples/prev-images/template3.PNG',
+    img: '../../resume-builder/assets/pdf-samples/prev-images/template3.PNG',
   },
 ];
 
