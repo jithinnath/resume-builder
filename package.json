@@ -10,7 +10,7 @@
     "cp_index": "cp ./docs/index.html ./docs/404.html ",
     "lint": "ng lint",
     "prettier-check":"prettier --check src/**/*.ts",
-    "prettier-format":"prettier --write src/**/*.ts"
+    "prettier-format":"prettier --write src/**/*.scss"
   },
   "private": true,
   "dependencies": {
