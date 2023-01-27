@@ -116,7 +116,8 @@ export class Common {
       stack: [
         { text: pd.email, color: config.color.accent },
         { text: pd.mobile },
-        { text: pd.address },
+        { text: pd.city },
+        { text: pd.country },
       ],
     };
   }

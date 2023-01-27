@@ -117,6 +117,8 @@ export const sample = {
     email: 'jitinnath@gmail.com',
     mobile: '7738663466',
     address: 'Bengaluru,India',
+    city:'Bengaluru',
+    country:'India',
     profileDescription: `Experienced web developer with a history of design collaboration offers
   sophisticated coding and troubleshooting. Always ensure bringing projects
   to completion well ahead of deadline while exceeding functional

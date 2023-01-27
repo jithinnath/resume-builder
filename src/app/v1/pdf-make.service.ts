@@ -19,9 +19,9 @@ export class PdfMakeService {
   private _config: IDocConfig = this.dataService.getConfig() as IDocConfig;
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  public createPdf(data: IResume, cacheData: () => void = () => { }) {
+  public createPdf(data: IResume, cacheData: () => void = () => { },templateId=0) {
     this._data = data;
-    this.t = this.initTemplate(3);
+    this.t = this.initTemplate(templateId);
     (window.navigator as any).userAgentData.mobile
       ? pdfMake.createPdf(this.t.dd(this._data)).download()
       : pdfMake.createPdf(this.t.dd(this._data)).open();
@@ -50,15 +50,15 @@ t:Template = new Template1();
   initTemplate(selected:number){
     let template:Template|null = null;
    switch(selected){
-    case 1:{
+    case 0:{
       template = new Template1();
       break;
     }
-    case 2:{
+    case 1:{
       template = new Template2();
       break
     }
-    case 3:{
+    case 2:{
       template = new Template3();
       break
     }

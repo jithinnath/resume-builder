@@ -35,7 +35,7 @@ export class Template1 implements Template {
         { text: data?.personalDetails?.email },
         { text: data?.personalDetails?.mobile },
         { text: '\n' },
-        { text: data?.personalDetails?.address },
+        { text: `${data?.personalDetails?.city},${data?.personalDetails?.country}` },
       ],
     };
   }

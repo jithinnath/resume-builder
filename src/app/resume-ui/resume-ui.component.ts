@@ -1,3 +1,4 @@
+import { ResumeData } from './../resume-data';
 import { ResumeIDBService } from './../resume-idb.service';
 import { Resume } from './../resume';
 import { IResume, IResumeDB } from './../types';
@@ -164,11 +165,12 @@ export class ResumeUIComponent implements OnInit {
 
     const resumData: Resume<string> = new Resume(data as IResume);
     resumData.personalDetails.profileImg = this.imgBase64;
-    this.pdfMake.createPdf(resumData, () => {
-      data?.id ? this.idbResume.updateResume(data) : this.idbResume.addResume(data);
+    this.router.navigate(['template-dashboard'],{state:{resumeData:resumData}})
+    // this.pdfMake.createPdf(resumData, () => {
+    //   data?.id ? this.idbResume.updateResume(data) : this.idbResume.addResume(data);
 
-      this.router.navigate(['resume-dashboard']);
-    });
+    //   this.router.navigate(['resume-dashboard']);
+    // });
   }
 
   private imgBase64 = '';
@@ -220,8 +222,8 @@ export class ResumeUIComponent implements OnInit {
         jobTitle: data.personalDetails.jobTitle,
         email: data.personalDetails.email,
         mobile: data.personalDetails.mobile,
-        city: data.personalDetails.address,
-        country: data.personalDetails.address,
+        city: data.personalDetails.city,
+        country: data.personalDetails.country,
         profileDescription: data.personalDetails.profileDescription,
       },
       skills: data?.skills || [],
