@@ -165,7 +165,7 @@ export class ResumeUIComponent implements OnInit {
 
     const resumData: Resume<string> = new Resume(data as IResume);
     resumData.personalDetails.profileImg = this.imgBase64;
-    this.router.navigate(['template-dashboard'],{state:{resumeData:resumData}})
+    this.router.navigate(['template-dashboard'], { state: { resumeData: resumData } });
     // this.pdfMake.createPdf(resumData, () => {
     //   data?.id ? this.idbResume.updateResume(data) : this.idbResume.addResume(data);
 

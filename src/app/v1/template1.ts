@@ -2,13 +2,11 @@ import { TDocumentDefinitions } from 'pdfmake/interfaces';
 import { Template } from './template';
 import { Common } from './common';
 import { IEducation, IEmployment, ILanguage, IResume, ISkill, ISocialLink, IPersonal } from './../types';
-import { formatDate } from "@angular/common";
-import {config} from '../resume-data'
+import { formatDate } from '@angular/common';
+import { config } from '../resume-data';
 export class Template1 implements Template {
-
-  public dd(data:IResume): TDocumentDefinitions {
+  public dd(data: IResume): TDocumentDefinitions {
     const dd: any = {
-
       pageSize: 'A4',
       pageOrientation: 'portrait',
       pageMargins: [20, 20, 20, 10],
@@ -17,7 +15,7 @@ export class Template1 implements Template {
         margin: [10, 10, 10, 10],
         fontSize: 10,
       },
-      content:this._buildContent(data),
+      content: this._buildContent(data),
       images: {
         profileImg: Common.getImage(data?.personalDetails?.profileImg || ''),
       },
@@ -26,7 +24,7 @@ export class Template1 implements Template {
     return dd;
   }
 
-  private _profileDetails(data:IResume) {
+  private _profileDetails(data: IResume) {
     return {
       stack: [
         { text: '', fontSize: config.jobTitleFontSize },
@@ -40,7 +38,7 @@ export class Template1 implements Template {
     };
   }
 
-  private _userInfoTable(data:IResume) {
+  private _userInfoTable(data: IResume) {
     return {
       layout: 'noBorders',
       table: {
@@ -75,7 +73,7 @@ export class Template1 implements Template {
     };
   }
 
-  private _buildContent(data:IResume) {
+  private _buildContent(data: IResume) {
     return [
       this._userInfoTable(data),
       {
@@ -100,15 +98,16 @@ export class Template1 implements Template {
             stack: [
               data?.employmentHistory?.length
                 ? {
-                  text: 'Employment History',
-                  fontSize: config.headerFontSize,
-                }
+                    text: 'Employment History',
+                    fontSize: config.headerFontSize,
+                  }
                 : '',
               ...this._employmentStack(data?.employmentHistory),
               data?.educations?.length
                 ? {
-                  text: 'Education', fontSize: config.headerFontSize
-                }
+                    text: 'Education',
+                    fontSize: config.headerFontSize,
+                  }
                 : '',
               ...this._employmentStack(data?.educations),
             ],
@@ -215,8 +214,6 @@ export class Template1 implements Template {
   }
 
   fontSizeforName = (name: string) => (name.length < 12 ? 64 : name.length < 20 ? 30 : name.length < 30 ? 40 : 30);
-
-
 
   private _formatDate(date: string) {
     return formatDate(date, 'MMM YYYY', 'en-IN');

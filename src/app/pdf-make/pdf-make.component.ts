@@ -25,7 +25,7 @@ export class PdfMakeComponent implements OnInit {
   }
 
   createPdf() {
-    const dd:TDocumentDefinitions = {
+    const dd: TDocumentDefinitions = {
       defaultStyle: {
         font: 'poppins',
         margin: [10, 10, 10, 10],
@@ -34,7 +34,7 @@ export class PdfMakeComponent implements OnInit {
       pageOrientation: 'portrait',
       pageMargins: [20, 20, 20, 10],
       content: [{ text: 'Full Stack Developer', fontSize: 15 }],
-    } ;
+    };
     pdfMake.createPdf(dd).open();
   }
 }

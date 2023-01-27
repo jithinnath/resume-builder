@@ -10,7 +10,12 @@
           <div class="row padding-top">
             <div class="col-xs-12 col-sm-3 col-md-6 col-lg-6 place-center avatar-container">
               <!-- <div class="row"> -->
-              <button title="button" type="button" mat-fab (click)="uploadImage(fileInput)"  matTooltip="Upload your image">
+              <button
+                title="button"
+                type="button"
+                mat-fab
+                (click)="uploadImage(fileInput)"
+                matTooltip="Upload your image">
                 <div id="avatar" class="avatar place-center">
                   <!-- <label>upload image</label> -->
                   <input
@@ -19,7 +24,7 @@
                     (change)="onFileChange($event)"
                     type="file"
                     accept="image/jpeg, image/png, image/jpg"
-                    id="image"/>
+                    id="image" />
                 </div>
               </button>
               <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -29,7 +34,7 @@
               <!-- </div> -->
             </div>
 
-            <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+            <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
               <mat-label>Proffesional Summary</mat-label>
               <textarea
                 matInput
@@ -37,27 +42,27 @@
                 placeholder="Experienced web developer looking for..."></textarea>
             </mat-form-field>
 
-            <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+            <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
               <mat-label>Name</mat-label>
               <input matInput placeholder="Your Name" formControlName="name" />
             </mat-form-field>
-            <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+            <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
               <mat-label>Your Designation</mat-label>
               <input matInput placeholder="Seniour Product Developer" formControlName="jobTitle" />
             </mat-form-field>
-            <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+            <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
               <mat-label>Email</mat-label>
               <input matInput placeholder="yourmail@example.com" formControlName="email" />
             </mat-form-field>
-            <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+            <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
               <mat-label>Mobile Number</mat-label>
               <input matInput placeholder="12 123 123 12" formControlName="mobile" />
             </mat-form-field>
-            <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+            <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
               <mat-label>Country</mat-label>
               <input matInput placeholder="India" formControlName="country" />
             </mat-form-field>
-            <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+            <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
               <mat-label>City</mat-label>
               <input matInput placeholder="Bengaluru" formControlName="city" />
             </mat-form-field>
@@ -91,15 +96,15 @@
             <!-- <form class="example-form" [formGroup]="fg(emp)" > -->
             <!-- <div> -->
             <div class="row accordion-body accordion-body-padding">
-              <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+              <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
                 <mat-label>Job Title</mat-label>
                 <input matInput formControlName="designation" placeholder="Senior Product Developer" />
               </mat-form-field>
-              <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+              <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
                 <mat-label>Employer</mat-label>
                 <input matInput formControlName="compayName" placeholder="Tata Consultancy Services" />
               </mat-form-field>
-              <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+              <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
                 <mat-label>Time period</mat-label>
                 <!-- <input matInput formControlName="from" placeholder="yourmail@example.com"> -->
                 <mat-date-range-input [rangePicker]="picker">
@@ -109,11 +114,11 @@
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-date-range-picker #picker></mat-date-range-picker>
               </mat-form-field>
-              <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+              <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
                 <mat-label>City</mat-label>
                 <input matInput formControlName="city" placeholder="Benaluru" />
               </mat-form-field>
-              <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+              <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
                 <mat-label>Proffesional Description</mat-label>
                 <textarea
                   formControlName="description"
@@ -159,15 +164,15 @@
 
               <!-- <form class="example-form" [formGroup]="educationDetails"> -->
               <div class="row accordion-body accordion-body-padding">
-                <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+                <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
                   <mat-label>Cource</mat-label>
                   <input matInput formControlName="designation" placeholder="Bachlor of Technology" />
                 </mat-form-field>
-                <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+                <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
                   <mat-label>College/School</mat-label>
                   <input matInput formControlName="compayName" placeholder="Govt College of Engineering Kannur " />
                 </mat-form-field>
-                <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+                <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
                   <mat-label>Start date - End date</mat-label>
                   <mat-date-range-input [rangePicker]="picker">
                     <input matStartDate placeholder="Start date" formControlName="from" />
@@ -176,11 +181,11 @@
                   <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-date-range-picker touchUi #picker></mat-date-range-picker>
                 </mat-form-field>
-                <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+                <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
                   <mat-label>City</mat-label>
                   <input matInput formControlName="city" placeholder="Bengaluru" />
                 </mat-form-field>
-                <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6" >
+                <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
                   <mat-label>Cource Description</mat-label>
                   <textarea
                     formControlName="description"
@@ -214,7 +219,7 @@
         <div [formGroup]="fg(skill)" *ngFor="let skill of resumeForm.controls.skills.controls let i = index">
           <!-- <mat-card> -->
           <div class="row padding-top">
-            <mat-form-field  class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <mat-form-field class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <mat-label>Skill</mat-label>
               <input matInput formControlName="name" placeholder="Java" [matAutocomplete]="skillac" />
               <mat-autocomplete autoActiveFirstOption #skillac="matAutocomplete">
@@ -262,7 +267,7 @@
         <div [formGroup]="fg(skill)" *ngFor="let skill of resumeForm.controls.languages.controls let i = index">
           <!-- <mat-card> -->
           <div class="row padding-top">
-            <mat-form-field class="col-xs-4 col-sm-4 col-md-4 col-lg-4" >
+            <mat-form-field class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
               <mat-label>Language</mat-label>
               <input matInput formControlName="name" placeholder="English" [matAutocomplete]="skillac" />
               <mat-autocomplete autoActiveFirstOption #skillac="matAutocomplete">
@@ -315,14 +320,14 @@
         <div [formGroup]="fg(skill)" *ngFor="let skill of resumeForm.controls.socialLinks.controls let i = index">
           <!-- <mat-card> -->
           <div class="row padding-top">
-            <mat-form-field class="col-xs-4 col-sm-4 col-md-4 col-lg-4" >
+            <mat-form-field class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
               <mat-label>Social Profile</mat-label>
               <input matInput formControlName="name" placeholder="Linkedin" [matAutocomplete]="skillac" />
               <mat-autocomplete autoActiveFirstOption #skillac="matAutocomplete">
                 <mat-option *ngFor="let option of linkOptions " [value]="option"> {{option}} </mat-option>
               </mat-autocomplete>
             </mat-form-field>
-            <mat-form-field class="col-xs-4 col-sm-4 col-md-4 col-lg-4" >
+            <mat-form-field class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
               <mat-label>Profile Url</mat-label>
               <input matInput formControlName="level" placeholder="https://linkedin.com/yourprofileId" />
             </mat-form-field>

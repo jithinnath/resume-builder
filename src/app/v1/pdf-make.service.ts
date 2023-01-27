@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 import { formatDate } from '@angular/common';
-import {Template2} from './template2'
+import { Template2 } from './template2';
 import { Template3 } from './template3';
 import { Template1 } from './template1';
 import { Template } from './template';
@@ -19,7 +19,7 @@ export class PdfMakeService {
   private _config: IDocConfig = this.dataService.getConfig() as IDocConfig;
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  public createPdf(data: IResume, cacheData: () => void = () => { },templateId=0) {
+  public createPdf(data: IResume, cacheData: () => void = () => {}, templateId = 0) {
     this._data = data;
     this.t = this.initTemplate(templateId);
     (window.navigator as any).userAgentData.mobile
@@ -28,14 +28,13 @@ export class PdfMakeService {
     cacheData();
   }
 
-
-  public previewPdf(data:IResume,callback:(data:string)=>void =()=>null){
-    this._data =data;
-    pdfMake.createPdf(this.t.dd(this._data)).getDataUrl(data=>{
-      callback(data)
-    })
+  public previewPdf(data: IResume, callback: (data: string) => void = () => null) {
+    this._data = data;
+    pdfMake.createPdf(this.t.dd(this._data)).getDataUrl(data => {
+      callback(data);
+    });
   }
-t:Template = new Template1();
+  t: Template = new Template1();
   constructor(private dataService: ResumeDataService) {
     (<any>pdfMake).fonts = {
       poppins: {
@@ -47,26 +46,25 @@ t:Template = new Template1();
     };
   }
 
-  initTemplate(selected:number){
-    let template:Template|null = null;
-   switch(selected){
-    case 0:{
-      template = new Template1();
-      break;
+  initTemplate(selected: number) {
+    let template: Template | null = null;
+    switch (selected) {
+      case 0: {
+        template = new Template1();
+        break;
+      }
+      case 1: {
+        template = new Template2();
+        break;
+      }
+      case 2: {
+        template = new Template3();
+        break;
+      }
+      default: {
+        template = new Template1();
+      }
     }
-    case 1:{
-      template = new Template2();
-      break
-    }
-    case 2:{
-      template = new Template3();
-      break
-    }
-    default:{
-      template = new Template1();
-    }
-   }
-   return template;
+    return template;
   }
-
 }

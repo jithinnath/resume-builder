@@ -32,8 +32,8 @@ export class ResumeDashboardComponent {
     this.router.navigate(['create-resume']);
   }
   download(resume: IResumeDB) {
-    this.router.navigate(['template-dashboard'],{ state: {resumeData:resume} })
-   // this.dashboard.download(resume);
+    this.router.navigate(['template-dashboard'], { state: { resumeData: resume } });
+    // this.dashboard.download(resume);
   }
 
   delete(resume: IResumeDB) {
