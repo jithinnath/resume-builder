@@ -2,8 +2,8 @@ import { IEmployment, IEducation, ISkill, ILanguage, ISocialLink, IResume, IPers
 
 export class Resume<T> {
   value: T | undefined;
-  id?:number;
-  name?:string;
+  id?: number;
+  name?: string;
   personalDetails: IPersonal;
   employmentHistory: IEmployment[] | [];
   educations: IEducation[] | [];

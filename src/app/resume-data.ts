@@ -1,4 +1,3 @@
-
 export class ResumeData {}
 
 export const config = {
@@ -16,98 +15,94 @@ export const config = {
   imageFit: [100, 100],
 };
 export const configTemplate2 = {
-
   imageFit: [50, 50],
 
   //
-  mainHeader:{
-    fontSize:20,
-    color:'#343a40',
-    fillColor:'#ffffff',
-    bold:false
+  mainHeader: {
+    fontSize: 20,
+    color: '#343a40',
+    fillColor: '#ffffff',
+    bold: false,
   },
-  header:{
-    fontSize:18,
-    color:'#343a40',
-    fillColor:'#ffffff',
-    bold:false
+  header: {
+    fontSize: 18,
+    color: '#343a40',
+    fillColor: '#ffffff',
+    bold: false,
   },
-  subHeader:{
-    fontSize:12,
-    color:'#343a40',
-    fillColor:'#ffffff',
-    bold:false
+  subHeader: {
+    fontSize: 12,
+    color: '#343a40',
+    fillColor: '#ffffff',
+    bold: false,
   },
-  subHeader2:{
-    fontSize:10,
-    color:'#343a40',
-    fillColor:'#ffffff',
-    bold:false
+  subHeader2: {
+    fontSize: 10,
+    color: '#343a40',
+    fillColor: '#ffffff',
+    bold: false,
   },
-  normalText:{
-    fontSize:10,
-    color:'#343a40',
-    fillColor:'#ffffff'
+  normalText: {
+    fontSize: 10,
+    color: '#343a40',
+    fillColor: '#ffffff',
   },
-  color:{
-    accent:'#448aff'
+  color: {
+    accent: '#448aff',
   },
-  list:true,
-  skillLines:{
-    gap:2,
-    color:'#448aff',
-    gapColor:'#ffffff',
-    bg:'#eeeeee'
-  }
+  list: true,
+  skillLines: {
+    gap: 2,
+    color: '#448aff',
+    gapColor: '#ffffff',
+    bg: '#eeeeee',
+  },
 };
 
 export const configTemplate3 = {
-
-  imageFit: [100,300],
+  imageFit: [100, 300],
 
   //
-  mainHeader:{
-    fontSize:20,
-    color:'#343a40',
-    fillColor:'#ffffff',
-    bold:false
+  mainHeader: {
+    fontSize: 20,
+    color: '#343a40',
+    fillColor: '#ffffff',
+    bold: false,
   },
-  header:{
-    fontSize:18,
-    color:'#343a40',
-    fillColor:'#ffffff',
-    bold:false
+  header: {
+    fontSize: 18,
+    color: '#343a40',
+    fillColor: '#ffffff',
+    bold: false,
   },
-  subHeader:{
-    fontSize:12,
-    color:'#343a40',
-    fillColor:'#ffffff',
-    bold:false
+  subHeader: {
+    fontSize: 12,
+    color: '#343a40',
+    fillColor: '#ffffff',
+    bold: false,
   },
-  subHeader2:{
-    fontSize:10,
-    color:'#343a40',
-    fillColor:'#ffffff',
-    bold:false
+  subHeader2: {
+    fontSize: 10,
+    color: '#343a40',
+    fillColor: '#ffffff',
+    bold: false,
   },
-  normalText:{
-    fontSize:10,
-    color:'#343a40',
-    fillColor:'#ffffff'
+  normalText: {
+    fontSize: 10,
+    color: '#343a40',
+    fillColor: '#ffffff',
   },
-  color:{
-    accent:'#9b9bb3'
+  color: {
+    accent: '#9b9bb3',
   },
-  list:true,
-  skillLines:{
-    gap:2,
-    color:'#9b9bb3',
-    gapColor:'#ffffff',
-    bg:'#CCCCCC'
-  }
+  list: true,
+  skillLines: {
+    gap: 2,
+    color: '#9b9bb3',
+    gapColor: '#ffffff',
+    bg: '#CCCCCC',
+  },
 };
-
-
 
 export const sample = {
   personalDetails: {
@@ -117,8 +112,8 @@ export const sample = {
     email: 'jitinnath@gmail.com',
     mobile: '7738663466',
     address: 'Bengaluru,India',
-    city:'Bengaluru',
-    country:'India',
+    city: 'Bengaluru',
+    country: 'India',
     profileDescription: `Experienced web developer with a history of design collaboration offers
   sophisticated coding and troubleshooting. Always ensure bringing projects
   to completion well ahead of deadline while exceeding functional

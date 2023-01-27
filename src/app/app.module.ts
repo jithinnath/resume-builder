@@ -25,7 +25,14 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { TemplateDashboardComponent } from './template-dashboard/template-dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, ResumeCanvasComponent, PdfMakeComponent, ResumeUIComponent, ResumeDashboardComponent, TemplateDashboardComponent],
+  declarations: [
+    AppComponent,
+    ResumeCanvasComponent,
+    PdfMakeComponent,
+    ResumeUIComponent,
+    ResumeDashboardComponent,
+    TemplateDashboardComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -52,7 +59,7 @@ import { TemplateDashboardComponent } from './template-dashboard/template-dashbo
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
-    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill',floatLabel: 'always'}}
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill', floatLabel: 'always' } },
   ],
   bootstrap: [AppComponent],
 })

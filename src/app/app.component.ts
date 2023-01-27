@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
     // await this.idb.openResumeDb();
     // this.idb.addResume({...sample,name:sample.personalDetails.name})
     // this.pdfMake.createPdf(sample as IResume);
-    this.router.navigate(['template-dashboard'])
+    this.router.navigate(['template-dashboard']);
   }
   home() {
     this.router.navigate(['resume-dashboard']);

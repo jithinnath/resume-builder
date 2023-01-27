@@ -28,7 +28,7 @@ export interface IEducation {
   designation: string;
   compayName: string;
   address: string;
-  city:string;
+  city: string;
   from: string;
   to: string;
   description: string;
@@ -50,8 +50,8 @@ export interface ISocialLink {
 }
 
 export interface IResume {
-  id?:number,
-  name?:string,
+  id?: number;
+  name?: string;
   personalDetails: IPersonal;
   employmentHistory: IEmployment[] | [];
   educations: IEducation[] | [];
@@ -67,8 +67,8 @@ export interface IPersonal {
   email: string | null;
   mobile: string | null;
   address: string | null;
-  city:string|null;
-  country:string|null;
+  city: string | null;
+  country: string | null;
   profileDescription: string | null;
 }
 
