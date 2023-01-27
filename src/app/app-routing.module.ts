@@ -7,8 +7,8 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { path: 'create-resume', component: ResumeUIComponent },
   { path: 'resume-dashboard', component: ResumeDashboardComponent },
-  { path: '', redirectTo: 'template-dashboard', pathMatch: 'full' },
-  {path:'template-dashboard',component:TemplateDashboardComponent}
+  { path: '', redirectTo: 'resume-dashboard', pathMatch: 'full' },
+  { path: 'template-dashboard', component: TemplateDashboardComponent },
 ];
 
 @NgModule({
