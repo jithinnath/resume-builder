@@ -1,0 +1,27 @@
+.dashboard {
+  min-height: calc(100vh - 55px);
+  width: 100%;
+  a {
+    font-size: 0.6em;
+  }
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding-top: 8px;
+}
+.align {
+  display: grid;
+  place-items: end;
+}
+
+@media (max-width: 576px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-top: 8px;
+  }
+}

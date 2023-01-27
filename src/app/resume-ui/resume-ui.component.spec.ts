@@ -8,9 +8,8 @@ describe('ResumeUIComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResumeUIComponent ]
-    })
-    .compileComponents();
+      declarations: [ResumeUIComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ResumeUIComponent);
     component = fixture.componentInstance;

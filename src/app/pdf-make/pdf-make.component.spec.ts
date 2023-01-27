@@ -8,9 +8,8 @@ describe('PdfMakeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PdfMakeComponent ]
-    })
-    .compileComponents();
+      declarations: [PdfMakeComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PdfMakeComponent);
     component = fixture.componentInstance;

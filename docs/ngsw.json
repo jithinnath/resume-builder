@@ -1,0 +1,137 @@
+{
+  "configVersion": 1,
+  "timestamp": 1674848339154,
+  "index": "/resume-builder/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/resume-builder/favicon.ico",
+        "/resume-builder/index.html",
+        "/resume-builder/main.1989a27fff43f002.js",
+        "/resume-builder/manifest.webmanifest",
+        "/resume-builder/polyfills.60e431facbbd2022.js",
+        "/resume-builder/runtime.84d3fa85e16871a0.js",
+        "/resume-builder/scripts.a6941e99b67c0784.js",
+        "/resume-builder/styles.04697512e5e34fc1.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/resume-builder/assets/fonts/Poppins-Black.ttf",
+        "/resume-builder/assets/fonts/Poppins-BlackItalic.ttf",
+        "/resume-builder/assets/fonts/Poppins-Bold.ttf",
+        "/resume-builder/assets/fonts/Poppins-BoldItalic.ttf",
+        "/resume-builder/assets/fonts/Poppins-ExtraBold.ttf",
+        "/resume-builder/assets/fonts/Poppins-ExtraBoldItalic.ttf",
+        "/resume-builder/assets/fonts/Poppins-ExtraLight.ttf",
+        "/resume-builder/assets/fonts/Poppins-ExtraLightItalic.ttf",
+        "/resume-builder/assets/fonts/Poppins-Italic.ttf",
+        "/resume-builder/assets/fonts/Poppins-Light.ttf",
+        "/resume-builder/assets/fonts/Poppins-LightItalic.ttf",
+        "/resume-builder/assets/fonts/Poppins-Medium.ttf",
+        "/resume-builder/assets/fonts/Poppins-MediumItalic.ttf",
+        "/resume-builder/assets/fonts/Poppins-Regular.ttf",
+        "/resume-builder/assets/fonts/Poppins-SemiBold.ttf",
+        "/resume-builder/assets/fonts/Poppins-SemiBoldItalic.ttf",
+        "/resume-builder/assets/fonts/Poppins-Thin.ttf",
+        "/resume-builder/assets/fonts/Poppins-ThinItalic.ttf",
+        "/resume-builder/assets/icons/icon-128x128.png",
+        "/resume-builder/assets/icons/icon-144x144.png",
+        "/resume-builder/assets/icons/icon-152x152.png",
+        "/resume-builder/assets/icons/icon-192x192.png",
+        "/resume-builder/assets/icons/icon-384x384.png",
+        "/resume-builder/assets/icons/icon-512x512.png",
+        "/resume-builder/assets/icons/icon-72x72.png",
+        "/resume-builder/assets/icons/icon-96x96.png",
+        "/resume-builder/assets/pdf-samples/prev-images/template1.PNG",
+        "/resume-builder/assets/pdf-samples/prev-images/template2.PNG",
+        "/resume-builder/assets/pdf-samples/prev-images/template3.PNG",
+        "/resume-builder/assets/pdf-samples/template1.pdf",
+        "/resume-builder/assets/pdf-samples/template2.pdf",
+        "/resume-builder/assets/pdf-samples/template3.pdf",
+        "/resume-builder/assets/profileImg.jpg",
+        "/resume-builder/assets/sample.jpg",
+        "/resume-builder/sample.46da072dcc8752e6.jpg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/resume-builder/assets/fonts/Poppins-Black.ttf": "645e04c53c6b5b35bce654a811ebce16af8aa721",
+    "/resume-builder/assets/fonts/Poppins-BlackItalic.ttf": "be4ef2aac7775a4b0179c0ecfce6cea8f7783f63",
+    "/resume-builder/assets/fonts/Poppins-Bold.ttf": "875cf0cecd647bcf22e79d633d868c1b1ec98dfa",
+    "/resume-builder/assets/fonts/Poppins-BoldItalic.ttf": "6de8952ca08d27ee77f57347d2cef4b4e26aa78f",
+    "/resume-builder/assets/fonts/Poppins-ExtraBold.ttf": "4b5c0750f073abd576413a0898d3b95adaf199c8",
+    "/resume-builder/assets/fonts/Poppins-ExtraBoldItalic.ttf": "94d3ee3acdbd00e37a715a25f2b5237666b5b8a3",
+    "/resume-builder/assets/fonts/Poppins-ExtraLight.ttf": "85af6582a7e6155917c605f9d3fed68c02b23b06",
+    "/resume-builder/assets/fonts/Poppins-ExtraLightItalic.ttf": "6fa0418f91032680d2d8fe4843009f2c80faa61d",
+    "/resume-builder/assets/fonts/Poppins-Italic.ttf": "e2bfcd56016c3c915221ef1c5fc1a17b0776eb91",
+    "/resume-builder/assets/fonts/Poppins-Light.ttf": "e247a92158e112f8bf7b638c8d95381d66b00dbb",
+    "/resume-builder/assets/fonts/Poppins-LightItalic.ttf": "f76102b361e705751a83b7b22fe954daf1f27dd4",
+    "/resume-builder/assets/fonts/Poppins-Medium.ttf": "283f21b44efbdbf276ba802be2d949a36bbc4233",
+    "/resume-builder/assets/fonts/Poppins-MediumItalic.ttf": "b592c62fdf88c40cfd0f031bba6423b1d4430472",
+    "/resume-builder/assets/fonts/Poppins-Regular.ttf": "fdd3002e7d814ee47c1c1b8487c72c6bbb3a2d00",
+    "/resume-builder/assets/fonts/Poppins-SemiBold.ttf": "8a4ace9392d06bcb7f8ea2f5169b07e4c383a90d",
+    "/resume-builder/assets/fonts/Poppins-SemiBoldItalic.ttf": "0c8bed0a5942b2388d36b11c115685d9f01700b0",
+    "/resume-builder/assets/fonts/Poppins-Thin.ttf": "09ba4dcd5509c8085bf88c665dcc51cbdfced27b",
+    "/resume-builder/assets/fonts/Poppins-ThinItalic.ttf": "fb8fccca21550e71135f92bbaf8a2e8a12c90465",
+    "/resume-builder/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/resume-builder/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/resume-builder/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/resume-builder/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/resume-builder/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/resume-builder/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/resume-builder/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/resume-builder/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/resume-builder/assets/pdf-samples/prev-images/template1.PNG": "890b493b7fb505adbb1cedd97a18da4df763d34a",
+    "/resume-builder/assets/pdf-samples/prev-images/template2.PNG": "0000a7abb5ad95c00cd213f66b6afdb81180dbe8",
+    "/resume-builder/assets/pdf-samples/prev-images/template3.PNG": "d29c032beec020b5c3f1ca16334aa81a56cf589a",
+    "/resume-builder/assets/pdf-samples/template1.pdf": "f9c2c283679f90aa21fa59db27c651d021acdd8b",
+    "/resume-builder/assets/pdf-samples/template2.pdf": "099007475a927a35ed96d8fbd200b1720f5e7848",
+    "/resume-builder/assets/pdf-samples/template3.pdf": "d2082da90eb64b68f3c7ec47d1eef3a410c92154",
+    "/resume-builder/assets/profileImg.jpg": "1eed30588bfe5a70387715219000db34ce4e7b78",
+    "/resume-builder/assets/sample.jpg": "b1ea6499896b68748f1028ea974f9372034dc3ca",
+    "/resume-builder/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/resume-builder/index.html": "28b76792fde99c947956c326bb7be95c2d7c0860",
+    "/resume-builder/main.1989a27fff43f002.js": "9659e2af91490868c2e500da3525cb960f33d1aa",
+    "/resume-builder/manifest.webmanifest": "84835155d79674ab439d545c9627e13557926fbb",
+    "/resume-builder/polyfills.60e431facbbd2022.js": "e85f84418318623f8a3579a7f68629d2b6897b2a",
+    "/resume-builder/runtime.84d3fa85e16871a0.js": "0106beb51d1c5f1aa70579ab9dfa5173d42ae43f",
+    "/resume-builder/sample.46da072dcc8752e6.jpg": "b1ea6499896b68748f1028ea974f9372034dc3ca",
+    "/resume-builder/scripts.a6941e99b67c0784.js": "6769b8d5626e838193f1e922bf66cab75614cde5",
+    "/resume-builder/styles.04697512e5e34fc1.css": "980b465746c1457faaf83b4785934bb202774fb0"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

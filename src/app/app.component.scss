@@ -1,11 +1,30 @@
-.margin{
-  margin: 16px 64px ;
+.margin {
+  margin: 16px 64px;
 }
 
 .example-spacer {
   flex: 1 1 auto;
 }
-.padding{
+.padding {
   padding-top: 16px;
   padding-bottom: 16px;
+}
+.sticky-toolbar {
+  position: fixed;
+  z-index: 2;
+}
+
+footer {
+  mat-toolbar {
+    height: 100px;
+  }
+}
+
+header {
+  mat-toolbar {
+    height: 55px;
+  }
+}
+.toolbar-hidden-space {
+  height: 55px;
 }

@@ -1,0 +1,30 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+// mat.$teal-palette
+// mat.$blue-palette,800
+//mat.$blue-grey-palette,500
+$my-primary: mat.define-palette(mat.$blue-palette, A200, 800);
+$my-accent: mat.define-palette(mat.$green-palette, A200, A100, A400);
+$my-warn: mat.define-palette(mat.$red-palette);
+
+$card-header-bg: #3d3b3b;
+
+//"default", "lighter", "darker", and "text"
+@mixin primary-bg {
+  background-color: mat.get-color-from-palette($my-primary);
+}
+@mixin accent-bg {
+  background-color: mat.get-color-from-palette($my-accent);
+}
+@mixin primary {
+  color: mat.get-color-from-palette($my-primary, '500-contrast');
+}
+
+@mixin accent {
+  color: mat.get-color-from-palette($my-accent, '500-contrast');
+}
+
+$primary: mat.get-color-from-palette($my-primary, '500-contrast');
+$accent: mat.get-color-from-palette($my-accent, '500-contrast');

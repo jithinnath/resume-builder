@@ -8,9 +8,8 @@ describe('ResumeCanvasComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ResumeCanvasComponent ]
-    })
-    .compileComponents();
+      declarations: [ResumeCanvasComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ResumeCanvasComponent);
     component = fixture.componentInstance;
