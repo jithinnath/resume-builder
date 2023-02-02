@@ -55,5 +55,21 @@
       "type": "image/png",
       "purpose": "maskable any"
     }
-  ]
+  ],
+  "screenshots" : [
+  {
+    "src": "assets/screenshots/choose-template_large.PNG",
+    "sizes": "1280x720",
+    "type": "image/png",
+    "platform": "wide",
+    "label": "Choose resume templates"
+  },
+  {
+    "src": "assets/screenshots/dashboard_large.PNG",
+    "sizes": "1280x720",
+    "type": "image/png",
+    "platform": "narrow",
+    "label": "User dashboard"
+  }
+]
 }
