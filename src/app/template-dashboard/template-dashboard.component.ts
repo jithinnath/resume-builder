@@ -59,9 +59,20 @@ export class TemplateDashboardComponent implements OnInit {
     this.pdfMake.createPdf(
       this.resume,
       () => {
-        this.resume?.id ? this.idbResume.updateResume(this.resume) : this.idbResume.addResume(this.resume);
+        // this.resume?.id ? this.idbResume.updateResume(this.resume) : this.idbResume.addResume(this.resume);
+
+        if (this.resume?.id) {
+          this.idbResume.updateResume(this.resume)
+          return;
+        }
+        delete this.resume.id;
+        this.idbResume.addResume(this.resume)
+        this.router.navigate(['resume-dashboard'],{state:{message:'Resume successfully generated'}});
+        return;
       },
       template.id
     );
+
+
   }
 }
