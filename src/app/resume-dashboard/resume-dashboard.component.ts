@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, tap } from 'rxjs';
 import { DashboardService } from './../dashboard.service';
@@ -10,10 +10,14 @@ import { IResumeDB } from './../types';
   templateUrl: './resume-dashboard.component.html',
   styleUrls: ['./resume-dashboard.component.scss'],
 })
-export class ResumeDashboardComponent {
+export class ResumeDashboardComponent implements OnInit {
   resumes$: Observable<IResumeDB[]> | null = null;
+  public message = '';
   constructor(private idbResume: ResumeIDBService, private router: Router, private dashboard: DashboardService) {
     this.openDb();
+  }
+  ngOnInit(): void {
+     this.message = history.state?.message;
   }
 
   async openDb() {

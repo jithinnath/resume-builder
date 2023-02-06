@@ -1,3 +1,4 @@
+import { ErrorMessageService } from './../error-message.service';
 import { ResumeData } from './../resume-data';
 import { ResumeIDBService } from './../resume-idb.service';
 import { Resume } from './../resume';
@@ -130,10 +131,12 @@ export class ResumeUIComponent implements OnInit {
     private fb: FormBuilder,
     private pdfMake: PdfMakeService,
     private idbResume: ResumeIDBService,
-    private router: Router
+    private router: Router,
+    public message:ErrorMessageService
   ) {}
   ngOnInit(): void {
     window.scrollTo(0, -100);
+    this.message.clear();
     this.openDB();
     const data = history.state;
     if (data && data?.name && data?.id) this.editDashboardData(data);
@@ -151,7 +154,13 @@ export class ResumeUIComponent implements OnInit {
       return;
     }
     if (!this.imgBase64) {
+      this.message.add('Please upload profile image');
+      window.scrollTo(0,-100)
       throw Error('upload image');
+    }
+    if(this.message.messages?.length){
+      window.scrollTo(0,-100)
+      return;
     }
     this._createPdfcall(data);
   }

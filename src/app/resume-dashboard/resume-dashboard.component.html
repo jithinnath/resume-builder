@@ -6,7 +6,11 @@
     </div>
     <!-- <button mat-stroked-button color="primary" (click)="addNewData()"> Add New</button> -->
   </div>
-
+<div *ngIf="message">
+  <div class="alert alert-success" role="alert">
+   {{message}}
+  </div>
+</div>
   <ng-container *ngIf="resumes$ | async as resumes; else loading">
     <ng-container *ngIf="resumes?.length; else nodata">
       <div class="grid-container">
