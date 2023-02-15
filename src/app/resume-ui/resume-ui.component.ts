@@ -1,10 +1,11 @@
+import { OpenAiApiService } from './../open-ai-api.service';
 import { ErrorMessageService } from './../error-message.service';
 import { ResumeData } from './../resume-data';
 import { ResumeIDBService } from './../resume-idb.service';
 import { Resume } from './../resume';
 import { IResume, IResumeDB } from './../types';
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { PdfMakeService } from '../v1/pdf-make.service';
 import { Router } from '@angular/router';
 
@@ -132,8 +133,9 @@ export class ResumeUIComponent implements OnInit {
     private pdfMake: PdfMakeService,
     private idbResume: ResumeIDBService,
     private router: Router,
-    public message:ErrorMessageService
-  ) {}
+    public message: ErrorMessageService,
+    private openAi: OpenAiApiService
+  ) { }
   ngOnInit(): void {
     window.scrollTo(0, -100);
     this.message.clear();
@@ -155,11 +157,11 @@ export class ResumeUIComponent implements OnInit {
     }
     if (!this.imgBase64) {
       this.message.add('Please upload profile image');
-      window.scrollTo(0,-100)
+      window.scrollTo(0, -100)
       throw Error('upload image');
     }
-    if(this.message.messages?.length){
-      window.scrollTo(0,-100)
+    if (this.message.messages?.length) {
+      window.scrollTo(0, -100)
       return;
     }
     this._createPdfcall(data);
@@ -244,5 +246,30 @@ export class ResumeUIComponent implements OnInit {
 
     this.resumeForm.controls.skills.patchValue(data?.skills);
     console.log(this.resumeForm.getRawValue());
+  }
+
+  rephrase = (control: FormControl|AbstractControl|null) =>{
+    if (!control?.value || control.value.length < 15) {
+      return;
+    }
+    control.disable();
+    this.openAi.rephrase(control.value).subscribe((d:any) => {
+    control.setValue( `${d?.choices[0]?.text?.replace('\n\n','')??control.value}`);
+    control.enable()
+    })
+  }
+  complete = (control: FormControl|AbstractControl|null) => {
+
+
+    if (!control?.value || control.value.length < 15) {
+      return;
+    }
+    control.disable();
+
+    this.openAi.complete(control.value).subscribe((d: any) => {
+
+      control.setValue( `${control.value}\n ${d?.choices[0]?.text?.replace('\n\n','')??''}`);
+      control.enable();
+    })
   }
 }

@@ -2,7 +2,7 @@
 <div class="container">
   <ng-container *ngFor="let message of message.messages">
     <div class="alert alert-danger" role="alert">
-    {{message}}&nbsp;!
+      {{message}}&nbsp;!
     </div>
   </ng-container>
   <form [formGroup]="resumeForm" (ngSubmit)="build(resumeForm.value)">
@@ -15,21 +15,12 @@
           <div class="row padding-top">
             <div class="col-xs-12 col-sm-3 col-md-6 col-lg-6 place-center avatar-container">
               <!-- <div class="row"> -->
-              <button
-                title="button"
-                type="button"
-                mat-fab
-                (click)="uploadImage(fileInput)"
+              <button title="button" type="button" mat-fab (click)="uploadImage(fileInput)"
                 matTooltip="Upload your image">
                 <div id="avatar" class="avatar place-center">
                   <!-- <label>upload image</label> -->
-                  <input
-                    #fileInput
-                    placeholder="Your Name"
-                    (change)="onFileChange($event)"
-                    type="file"
-                    accept="image/jpeg, image/png, image/jpg"
-                    id="image" />
+                  <input #fileInput placeholder="Your Name" (change)="onFileChange($event)" type="file"
+                    accept="image/jpeg, image/png, image/jpg" id="image" />
                 </div>
               </button>
               <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
@@ -39,13 +30,24 @@
               <!-- </div> -->
             </div>
 
-            <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
-              <mat-label>Proffesional Summary</mat-label>
-              <textarea
-                matInput
-                formControlName="profileDescription"
-                placeholder="Experienced web developer looking for..."></textarea>
-            </mat-form-field>
+            <div class="col-xs-12 col-sm-3 col-md-6 col-lg-6 text-area">
+              <mat-form-field>
+                <mat-label>Proffesional Summary</mat-label>
+                <textarea cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="4" matInput
+                  formControlName="profileDescription"
+                  placeholder="Experienced web developer looking for..."></textarea>
+
+              </mat-form-field>
+              <div>
+                <button mat-button type="button"
+                  (click)="complete(resumeForm.controls.personalDetails.controls.profileDescription)">auto
+                  complete</button>&nbsp;
+                <button mat-button type="button"
+                  (click)="rephrase(resumeForm.controls.personalDetails.controls.profileDescription)">rephrase</button>
+
+              </div>
+              <br>
+            </div>
 
             <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
               <mat-label>Name</mat-label>
@@ -84,11 +86,8 @@
       </mat-card-header>
       <mat-card-content class="padding-0">
         <mat-accordion class="accordion">
-          <mat-expansion-panel
-            [formGroup]="fg(emp)"
-            elevation="0"
-            *ngFor="let emp of resumeForm.controls.employmentHistory.controls let i = index"
-            expanded="true"
+          <mat-expansion-panel [formGroup]="fg(emp)" elevation="0"
+            *ngFor="let emp of resumeForm.controls.employmentHistory.controls let i = index" expanded="true"
             class="accordion-item accordion-collapse collapse show">
             <mat-expansion-panel-header class="accordion-header">
               <mat-panel-title>
@@ -123,13 +122,21 @@
                 <mat-label>City</mat-label>
                 <input matInput formControlName="city" placeholder="Benaluru" />
               </mat-form-field>
-              <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
-                <mat-label>Proffesional Description</mat-label>
-                <textarea
-                  formControlName="description"
-                  matInput
-                  placeholder="Create and implement  banking product solutions ..."></textarea>
-              </mat-form-field>
+              <div  class="col-xs-12 col-sm-3 col-md-6 col-lg-6 text-area">
+                <mat-form-field>
+                  <mat-label>Proffesional Description</mat-label>
+                  <textarea cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="6"
+                    formControlName="description" matInput
+                    placeholder="Create and implement  banking product solutions ..."></textarea>
+                </mat-form-field>
+                <div>
+                  <button mat-button type="button"
+                    (click)="complete(emp.get('description'))">auto
+                    complete</button>&nbsp;
+                  <button mat-button type="button"
+                    (click)="rephrase(emp.get('description'))">rephrase</button>
+                </div>
+              </div>
             </div>
             <br />
             <!-- </form> -->
@@ -155,10 +162,8 @@
       <mat-card-content class="padding-0">
         <div>
           <mat-accordion class="accordion">
-            <mat-expansion-panel
-              [formGroup]="fg(emp)"
-              *ngFor="let emp of resumeForm.controls.educations.controls let i = index"
-              expanded="true"
+            <mat-expansion-panel [formGroup]="fg(emp)"
+              *ngFor="let emp of resumeForm.controls.educations.controls let i = index" expanded="true"
               class="accordion-item accordion-collapse collapse show">
               <mat-expansion-panel-header class="accordion-header">
                 <mat-panel-title> {{emptitle(emp,1)}} </mat-panel-title>
@@ -190,13 +195,21 @@
                   <mat-label>City</mat-label>
                   <input matInput formControlName="city" placeholder="Bengaluru" />
                 </mat-form-field>
-                <mat-form-field class="col-xs-12 col-sm-3 col-md-6 col-lg-6">
-                  <mat-label>Cource Description</mat-label>
-                  <textarea
-                    formControlName="description"
-                    matInput
-                    placeholder="Graduated in Electronics and Communications with first class ..."></textarea>
-                </mat-form-field>
+                <div  class="col-xs-12 col-sm-3 col-md-6 col-lg-6 text-area">
+                  <mat-form-field>
+                    <mat-label>Cource Description</mat-label>
+                    <textarea cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+                      formControlName="description" matInput
+                      placeholder="Graduated in Electronics and Communications with first class ..."></textarea>
+                  </mat-form-field>
+                  <div>
+                    <button mat-button type="button"
+                      (click)="complete(emp.get('description'))">auto
+                      complete</button>&nbsp;
+                    <button mat-button type="button"
+                      (click)="rephrase(emp.get('description'))">rephrase</button>
+                  </div>
+                </div>
               </div>
 
               <br />
@@ -233,9 +246,7 @@
             </mat-form-field>
 
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 button-toggle-group-padding place-center">
-              <mat-button-toggle-group
-                formControlName="level"
-                aria-label="Font Style"
+              <mat-button-toggle-group formControlName="level" aria-label="Font Style"
                 class="example-full-width btn-group btn-group-toggle row">
                 <mat-button-toggle value="Professional" class="btn col-xs-4 col-sm-4 col-md-4 col-lg-4">
                   <p>Professional</p>
@@ -281,27 +292,18 @@
             </mat-form-field>
 
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 button-toggle-group-padding place-center">
-              <mat-button-toggle-group
-                formControlName="level"
-                aria-label="Font Style"
+              <mat-button-toggle-group formControlName="level" aria-label="Font Style"
                 class="example-full-width btn-group btn-group-toggle row">
-                <mat-button-toggle value="Fluent" class="btn col-xs-4 col-sm-4 col-md-4 col-lg-4"
-                  >Fluent</mat-button-toggle
-                >
-                <mat-button-toggle value="Proficient" class="btn col-xs-4 col-sm-4 col-md-4 col-lg-4"
-                  >Proficient</mat-button-toggle
-                >
-                <mat-button-toggle value="Conversant" class="btn col-xs-4 col-sm-4 col-md-4 col-lg-4"
-                  >Conversant</mat-button-toggle
-                >
+                <mat-button-toggle value="Fluent"
+                  class="btn col-xs-4 col-sm-4 col-md-4 col-lg-4">Fluent</mat-button-toggle>
+                <mat-button-toggle value="Proficient"
+                  class="btn col-xs-4 col-sm-4 col-md-4 col-lg-4">Proficient</mat-button-toggle>
+                <mat-button-toggle value="Conversant"
+                  class="btn col-xs-4 col-sm-4 col-md-4 col-lg-4">Conversant</mat-button-toggle>
               </mat-button-toggle-group>
             </div>
             <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-              <button
-                mat-stroked-button
-                color="primary"
-                (click)="deleteLanguage(i)"
-                type="button"
+              <button mat-stroked-button color="primary" (click)="deleteLanguage(i)" type="button"
                 class="button-margin-h">
                 Delete
               </button>
