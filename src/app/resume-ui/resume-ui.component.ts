@@ -248,17 +248,23 @@ export class ResumeUIComponent implements OnInit {
     console.log(this.resumeForm.getRawValue());
   }
 
-  rephrase = (control: FormControl|AbstractControl|null) =>{
+  rephrase = (control: FormControl | AbstractControl | null) => {
     if (!control?.value || control.value.length < 15) {
       return;
     }
     control.disable();
-    this.openAi.rephrase(control.value).subscribe((d:any) => {
-    control.setValue( `${d?.choices[0]?.text?.replace('\n\n','')??control.value}`);
-    control.enable()
-    })
+    this.openAi.rephrase(control.value).subscribe(
+      {
+        next: (d: any) => {
+          control.setValue(`${d?.choices[0]?.text?.replace('\n\n', '') ?? control.value}`);
+          control.enable()
+        },
+        error: (e) => {control.enable();console.error('error rephrase',e)},
+        complete: () => {control.enable();console.log('completed rephrase')}
+      }
+    )
   }
-  complete = (control: FormControl|AbstractControl|null) => {
+  complete = (control: FormControl | AbstractControl | null) => {
 
 
     if (!control?.value || control.value.length < 15) {
@@ -266,10 +272,15 @@ export class ResumeUIComponent implements OnInit {
     }
     control.disable();
 
-    this.openAi.complete(control.value).subscribe((d: any) => {
-
-      control.setValue( `${control.value}\n ${d?.choices[0]?.text?.replace('\n\n','')??''}`);
-      control.enable();
-    })
+    this.openAi.complete(control.value).subscribe(
+      {
+        next: (d: any) => {
+          control.setValue(`${control.value}\n ${d?.choices[0]?.text?.replace('\n\n', '') ?? ''}`);
+          control.enable();
+        },
+        error: (e) => {control.enable();console.error('error complete',e)},
+        complete: () => {control.enable();console.log('completed complete')}
+      }
+     )
   }
 }
