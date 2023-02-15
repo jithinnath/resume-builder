@@ -190,3 +190,19 @@
 .toolbar-hidden-space {
   height: 55px;
 }
+
+.text-area {
+
+  mat-form-field{
+    width: 100%;
+    font-size: 0.8rem;
+  }
+
+  div {
+    text-align: end;
+    button{
+      font-size: 0.6rem;
+    }
+
+  }
+}

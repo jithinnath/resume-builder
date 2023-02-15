@@ -1,10 +1,12 @@
-import { sample } from './../resume-data';
+import { ConfigStore } from './../config.store';
+import { sample, config } from './../resume-data';
 import { PdfMakeService } from './../v1/pdf-make.service';
 import { Component, OnInit } from '@angular/core';
 import { IResume } from '../types';
 import { Router } from '@angular/router';
 import { ResumeIDBService } from '../resume-idb.service';
 import { Resume } from '../resume';
+import { ComponentStore } from '@ngrx/component-store';
 
 export const templates = [
   {
@@ -35,7 +37,9 @@ export const templates = [
 export class TemplateDashboardComponent implements OnInit {
   public templates = templates;
   private resume: IResume | Resume<string>;
-  constructor(private pdfMake: PdfMakeService, private router: Router, private idbResume: ResumeIDBService) {
+  constructor(private pdfMake: PdfMakeService, private router: Router, private idbResume: ResumeIDBService,
+
+    ) {
     this.resume = history.state?.resumeData;
   }
   ngOnInit(): void {
@@ -55,6 +59,7 @@ export class TemplateDashboardComponent implements OnInit {
       this.router.navigate(['create-resume']);
       return;
     }
+    this
 
     this.pdfMake.createPdf(
       this.resume,

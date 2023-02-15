@@ -23,6 +23,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { TemplateDashboardComponent } from './template-dashboard/template-dashboard.component';
+import {TextFieldModule} from '@angular/cdk/text-field';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -56,6 +59,8 @@ import { TemplateDashboardComponent } from './template-dashboard/template-dashbo
     }),
     MatIconModule,
     MatTooltipModule,
+    TextFieldModule,
+    HttpClientModule
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },

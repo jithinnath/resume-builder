@@ -76,3 +76,9 @@ export interface IResumeDB extends IResume {
   name: string;
   id: number;
 }
+
+export interface IConfig {
+  imageFit:[number,number];
+  mainHeader:any;
+
+}
