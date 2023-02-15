@@ -1,4 +1,3 @@
-import { ConfigStore } from './../config.store';
 import { sample, config } from './../resume-data';
 import { PdfMakeService } from './../v1/pdf-make.service';
 import { Component, OnInit } from '@angular/core';
