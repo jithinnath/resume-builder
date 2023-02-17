@@ -40,10 +40,10 @@
               </mat-form-field>
               <div>
                 <button mat-button type="button"
-                  (click)="complete(resumeForm.controls.personalDetails.controls.profileDescription)">auto
-                  complete</button>&nbsp;
+                matTooltip="{{profileDescription_tooltip_disp}}"
+                  (click)="complete(resumeForm.controls.personalDetails.controls.profileDescription,'Write a  professional summary for my resume')">suggest</button>&nbsp;
                 <button mat-button type="button"
-                  (click)="rephrase(resumeForm.controls.personalDetails.controls.profileDescription)">rephrase</button>
+                  (click)="rephrase(resumeForm.controls.personalDetails.controls.profileDescription)">correct grammer</button>
 
               </div>
               <br>
@@ -131,10 +131,10 @@
                 </mat-form-field>
                 <div>
                   <button mat-button type="button"
-                    (click)="complete(emp.get('description'))">auto
-                    complete</button>&nbsp;
+                  matTooltip="{{profileDescription_tooltip_disp}}"
+                    (click)="complete(emp.get('description'),'Please help to create a work experience paragraph with bullet points summarizing my experience as a software engineer. Some of my work experience accomplishments include')">suggest</button>&nbsp;
                   <button mat-button type="button"
-                    (click)="rephrase(emp.get('description'))">rephrase</button>
+                    (click)="rephrase(emp.get('description'))">correct grammer</button>
                 </div>
               </div>
             </div>
@@ -204,10 +204,9 @@
                   </mat-form-field>
                   <div>
                     <button mat-button type="button"
-                      (click)="complete(emp.get('description'))">auto
-                      complete</button>&nbsp;
+                      (click)="complete(emp.get('description'))">suggest</button>&nbsp;
                     <button mat-button type="button"
-                      (click)="rephrase(emp.get('description'))">rephrase</button>
+                      (click)="rephrase(emp.get('description'))">correct grammer</button>
                   </div>
                 </div>
               </div>

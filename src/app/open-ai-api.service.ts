@@ -18,7 +18,7 @@ export class OpenAiApiService {
   }
 
   public complete = (sentence: string) => {
-    return this.openAi(`Complete this sentance for my resume: "${sentence}"`)
+    return this.openAi(`"${sentence}"`)
   }
 
   public openAi(prompt: string) {

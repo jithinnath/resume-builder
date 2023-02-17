@@ -256,31 +256,37 @@ export class ResumeUIComponent implements OnInit {
     this.openAi.rephrase(control.value).subscribe(
       {
         next: (d: any) => {
-          control.setValue(`${d?.choices[0]?.text?.replace('\n\n', '') ?? control.value}`);
+          control.setValue(`${d?.choices[0]?.text?.replace('\n\n', '').replace(/[^\w\s\n]/gi,'') ?? control.value}`);
           control.enable()
         },
-        error: (e) => {control.enable();console.error('error rephrase',e)},
-        complete: () => {control.enable();console.log('completed rephrase')}
+        error: (e) => { control.enable(); console.error('error rephrase', e) },
+        complete: () => { control.enable(); console.log('completed rephrase') }
       }
     )
   }
-  complete = (control: FormControl | AbstractControl | null) => {
+  complete = (control: FormControl | AbstractControl | null, prompter = '') => {
 
 
     if (!control?.value || control.value.length < 15) {
       return;
     }
     control.disable();
+    let prompt = control.value;
+    if (prompter) {
+      prompt = prompter + " : " + prompt;
+    }
 
-    this.openAi.complete(control.value).subscribe(
+    this.openAi.complete(prompt).subscribe(
       {
         next: (d: any) => {
-          control.setValue(`${control.value}\n ${d?.choices[0]?.text?.replace('\n\n', '') ?? ''}`);
+          control.setValue(`${control.value}\n ${d?.choices[0]?.text?.replace('\n\n', '').replace(/[^\w\s\n]/gi,'') ?? ''}`);
           control.enable();
         },
-        error: (e) => {control.enable();console.error('error complete',e)},
-        complete: () => {control.enable();console.log('completed complete')}
+        error: (e) => { control.enable(); console.error('error complete', e) },
+        complete: () => { control.enable(); console.log('completed complete') }
       }
      )
   }
+public profileDescription_tooltip_disp ="As for suggestions, you might consider adding more specific details about your technical skills and experience, as well as any notable projects or accomplishments. Additionally, you could consider highlighting any soft skills or traits that make you a particularly strong candidate for all roles, such as strong communication skills, attention to detail, or a passion for staying up-to-date with industry trends and best practices";
+
 }
