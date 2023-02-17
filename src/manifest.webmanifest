@@ -1,9 +1,9 @@
 {
   "name": "resumeBuilder",
-  "short_name": "resumeBuilder",
+  "short_name": "rbuilder",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
-  "display": "standalone",
+  "display": "fullscreen",
   "scope": "./",
   "start_url": "./",
   "icons": [
@@ -60,16 +60,14 @@
   {
     "src": "assets/screenshots/choose-template_large.PNG",
     "sizes": "1280x720",
-    "type": "image/png",
-    "platform": "wide",
-    "label": "Choose resume templates"
+    "type": "image/png"
+
   },
   {
     "src": "assets/screenshots/dashboard_large.PNG",
     "sizes": "1280x720",
-    "type": "image/png",
-    "platform": "narrow",
-    "label": "User dashboard"
+    "type": "image/png"
+
   }
 ]
 }
