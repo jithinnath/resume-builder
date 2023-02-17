@@ -1,5 +1,5 @@
 import { OpenAiApiService } from './../open-ai-api.service';
-import { ErrorMessageService } from './../error-message.service';
+import { ErrorMessageService, MESSAGES } from './../error-message.service';
 import { ResumeData } from './../resume-data';
 import { ResumeIDBService } from './../resume-idb.service';
 import { Resume } from './../resume';
@@ -156,7 +156,8 @@ export class ResumeUIComponent implements OnInit {
       return;
     }
     if (!this.imgBase64) {
-      this.message.add('Please upload profile image');
+      if(!this.message.messages.includes(MESSAGES.NO_PROF_IMG))
+        this.message.add(MESSAGES.NO_PROF_IMG);
       window.scrollTo(0, -100)
       throw Error('upload image');
     }
@@ -191,6 +192,10 @@ export class ResumeUIComponent implements OnInit {
     const im = document.getElementById('avatar') as HTMLInputElement;
     im.style.backgroundImage = `url(${URL.createObjectURL(filex)})`;
     // im.src = URL.createObjectURL(filex)
+
+    if(this.imgBase64 &&  this.message.messages.includes(MESSAGES.NO_PROF_IMG)){
+      this.message.messages.splice(this.message.messages.indexOf(MESSAGES.NO_PROF_IMG),1)
+    }
   }
 
   getBase64(file: File, callback: any) {
@@ -285,7 +290,7 @@ export class ResumeUIComponent implements OnInit {
         error: (e) => { control.enable(); console.error('error complete', e) },
         complete: () => { control.enable(); console.log('completed complete') }
       }
-     )
+    )
   }
 public profileDescription_tooltip_disp ="As for suggestions, you might consider adding more specific details about your technical skills and experience, as well as any notable projects or accomplishments. Additionally, you could consider highlighting any soft skills or traits that make you a particularly strong candidate for all roles, such as strong communication skills, attention to detail, or a passion for staying up-to-date with industry trends and best practices";
 

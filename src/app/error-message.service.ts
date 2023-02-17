@@ -12,4 +12,10 @@ export class ErrorMessageService {
   clear() {
     this.messages = [];
   }
+
+
+}
+
+export enum MESSAGES {
+  NO_PROF_IMG = 'Please upload profile image',
 }
