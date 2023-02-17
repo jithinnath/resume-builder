@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1676566364313,
+  "timestamp": 1676632519340,
   "index": "/resume-builder/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/resume-builder/favicon.ico",
         "/resume-builder/index.html",
-        "/resume-builder/main.c0983d88dbbfab5b.js",
+        "/resume-builder/main.5a5cd4f13f6df63b.js",
         "/resume-builder/manifest.webmanifest",
         "/resume-builder/polyfills.60e431facbbd2022.js",
         "/resume-builder/runtime.84d3fa85e16871a0.js",
@@ -118,9 +118,9 @@
     "/resume-builder/assets/screenshots/dashboard_large.PNG": "c50e9086c06a5a676c4d50ad62bdd2db474d385b",
     "/resume-builder/assets/screenshots/dashboard_mobile.png": "43740438df6fcf8c56b24e58360331a77cef0445",
     "/resume-builder/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/resume-builder/index.html": "9c23a3ecc790dc93b94a1ea782752934ba228aef",
-    "/resume-builder/main.c0983d88dbbfab5b.js": "756bae13d10d96882184c96b719b78358e93138e",
-    "/resume-builder/manifest.webmanifest": "5e9638ba5baed5f6b2b9520a312af6ebd0416b6c",
+    "/resume-builder/index.html": "8960ddf66d0762b55c8775baf9422796e140620f",
+    "/resume-builder/main.5a5cd4f13f6df63b.js": "25b9432a46d3fd0552b11393c7c00c3e336e7dd9",
+    "/resume-builder/manifest.webmanifest": "054ac8e366a9740824c2cdb45ab3c2a65a5293c0",
     "/resume-builder/polyfills.60e431facbbd2022.js": "e85f84418318623f8a3579a7f68629d2b6897b2a",
     "/resume-builder/runtime.84d3fa85e16871a0.js": "0106beb51d1c5f1aa70579ab9dfa5173d42ae43f",
     "/resume-builder/sample.46da072dcc8752e6.jpg": "b1ea6499896b68748f1028ea974f9372034dc3ca",
