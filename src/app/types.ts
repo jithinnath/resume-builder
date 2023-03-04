@@ -82,3 +82,21 @@ export interface IConfig {
   mainHeader:any;
 
 }
+
+export interface IOpenAiResponse{
+
+    "id": string,
+    "object": string,
+    "created":number,
+    "model": string,
+    "choices":
+        {
+            "text": string,
+            "index": number,
+            "logprobs": unknown,
+            "finish_reason": string
+        }[]
+
+    "usage": unknown
+
+}

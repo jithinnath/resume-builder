@@ -3,7 +3,7 @@ import { ErrorMessageService, MESSAGES } from './../error-message.service';
 import { ResumeData } from './../resume-data';
 import { ResumeIDBService } from './../resume-idb.service';
 import { Resume } from './../resume';
-import { IResume, IResumeDB } from './../types';
+import { IResume, IResumeDB, IOpenAiResponse } from './../types';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { PdfMakeService } from '../v1/pdf-make.service';
@@ -186,9 +186,10 @@ export class ResumeUIComponent implements OnInit {
   }
 
   private imgBase64 = '';
-  onFileChange(event: Event) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onFileChange(_event: Event) {
     const filex: File = (document.getElementById('image') as HTMLInputElement)?.files![0];
-    this.getBase64(filex, (e: any) => (this.imgBase64 = e.target.result));
+    this.getBase64(filex, (e: ProgressEvent<FileReader>) => (this.imgBase64 = e.target?.result?.toString()??''));
     const im = document.getElementById('avatar') as HTMLInputElement;
     im.style.backgroundImage = `url(${URL.createObjectURL(filex)})`;
     // im.src = URL.createObjectURL(filex)
@@ -198,14 +199,14 @@ export class ResumeUIComponent implements OnInit {
     }
   }
 
-  getBase64(file: File, callback: any) {
+  getBase64(file: File, callback: (e:ProgressEvent<FileReader>)=>string) {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onload = callback;
   }
 
-  emptitle(emp: any, code = 0) {
-    const empx = this.fg(emp);
+  emptitle(emp: AbstractControl, code = 0) {
+    // const empx = this.fg(emp);
     if (!this.fg(emp)?.get('designation')?.value || !this.fg(emp).get('compayName')?.value) {
       return code ? `Enter your education details` : `Enter your employment details`;
     }
@@ -225,11 +226,11 @@ export class ResumeUIComponent implements OnInit {
     const im = document.getElementById('avatar') as HTMLInputElement;
     im.style.backgroundImage = `url(${this.imgBase64})`;
 
-    data?.skills?.forEach(skill => this.addSkill());
-    data?.educations?.forEach(ed => this.addEducation());
-    data?.employmentHistory?.forEach(em => this.addEmployment());
-    data?.languages?.forEach(l => this.addLanguage());
-    data?.socialLinks?.forEach(s => this.addLink());
+    data?.skills?.forEach(() => this.addSkill());
+    data?.educations?.forEach(() => this.addEducation());
+    data?.employmentHistory?.forEach(() => this.addEmployment());
+    data?.languages?.forEach(() => this.addLanguage());
+    data?.socialLinks?.forEach(() => this.addLink());
     this.resumeForm.patchValue({
       id: data.id,
       name: data.name,
@@ -283,7 +284,7 @@ export class ResumeUIComponent implements OnInit {
 
     this.openAi.complete(prompt).subscribe(
       {
-        next: (d: any) => {
+        next: (d:any) => {
           control.setValue(`${control.value}\n ${d?.choices[0]?.text?.replace('\n\n', '').replace(/[^\w\s\n]/gi,'') ?? ''}`);
           control.enable();
         },
