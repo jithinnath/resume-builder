@@ -118,7 +118,7 @@ body {
 
 mat-card {
   box-shadow: none !important;
-  border: 1px solid colors.$primary !important;
+  border: 1px solid #ffff !important;
   border-radius: 4px 4px 0 0 !important;
 }
 
@@ -148,4 +148,8 @@ mat-card {
 
 mat-expansion-panel {
   box-shadow: none;
+}
+
+a{
+  color: mat.get-color-from-palette($my-primary, 'lighter');
 }

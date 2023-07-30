@@ -17,14 +17,19 @@
 footer {
   mat-toolbar {
     height: 100px;
+    border-top: 1px solid #3d3939;
+
   }
 }
 
 header {
   mat-toolbar {
     height: 55px;
+    border-bottom: 1px solid #3d3939;
   }
 }
 .toolbar-hidden-space {
-  height: 55px;
+  height: 65px;
 }
+
+

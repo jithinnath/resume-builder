@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1676652415269,
+  "timestamp": 1690743486906,
   "index": "/resume-builder/index.html",
   "assetGroups": [
     {
@@ -13,12 +13,12 @@
       "urls": [
         "/resume-builder/favicon.ico",
         "/resume-builder/index.html",
-        "/resume-builder/main.1ded62dc46ee992c.js",
+        "/resume-builder/main.d368e454a6c854ed.js",
         "/resume-builder/manifest.webmanifest",
         "/resume-builder/polyfills.60e431facbbd2022.js",
         "/resume-builder/runtime.84d3fa85e16871a0.js",
         "/resume-builder/scripts.a6941e99b67c0784.js",
-        "/resume-builder/styles.04697512e5e34fc1.css"
+        "/resume-builder/styles.ed04cf51a9e40e47.css"
       ],
       "patterns": []
     },
@@ -118,14 +118,14 @@
     "/resume-builder/assets/screenshots/dashboard_large.PNG": "c50e9086c06a5a676c4d50ad62bdd2db474d385b",
     "/resume-builder/assets/screenshots/dashboard_mobile.png": "43740438df6fcf8c56b24e58360331a77cef0445",
     "/resume-builder/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/resume-builder/index.html": "64b2e4aca892d43ff57bd05f06bdde3330f67af9",
-    "/resume-builder/main.1ded62dc46ee992c.js": "433d08253f7328d323299aa751f51d6531501c4b",
+    "/resume-builder/index.html": "4be0f9a435cdb13dc843827a5bdca081b279b2aa",
+    "/resume-builder/main.d368e454a6c854ed.js": "6f5a7f0abca87f1fec66782ce73f044df8a35940",
     "/resume-builder/manifest.webmanifest": "054ac8e366a9740824c2cdb45ab3c2a65a5293c0",
     "/resume-builder/polyfills.60e431facbbd2022.js": "e85f84418318623f8a3579a7f68629d2b6897b2a",
     "/resume-builder/runtime.84d3fa85e16871a0.js": "0106beb51d1c5f1aa70579ab9dfa5173d42ae43f",
     "/resume-builder/sample.46da072dcc8752e6.jpg": "b1ea6499896b68748f1028ea974f9372034dc3ca",
     "/resume-builder/scripts.a6941e99b67c0784.js": "6769b8d5626e838193f1e922bf66cab75614cde5",
-    "/resume-builder/styles.04697512e5e34fc1.css": "980b465746c1457faaf83b4785934bb202774fb0"
+    "/resume-builder/styles.ed04cf51a9e40e47.css": "f291397007cdac51466e3ef7cd7cff66ed5c4350"
   },
   "navigationUrls": [
     {

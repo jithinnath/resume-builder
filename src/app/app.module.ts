@@ -64,7 +64,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
-    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill', floatLabel: 'always' } },
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill', floatLabel: 'always',color:'accent' } },
   ],
   bootstrap: [AppComponent],
 })

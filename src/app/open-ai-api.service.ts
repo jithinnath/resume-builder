@@ -1,13 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { apiKey } from './Openai_API_KEY'
+// import { apiKey } from './Openai_API_KEY'
 
 @Injectable({
   providedIn: 'root'
 })
 export class OpenAiApiService {
 
-  private readonly apiKey = apiKey.key;
+  private readonly apiKey ='' //apiKey.key;
   private readonly apiUrl = `https://openai-api-production-155f.up.railway.app/api/complete`;
 
 
