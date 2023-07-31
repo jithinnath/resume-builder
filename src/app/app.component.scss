@@ -24,7 +24,7 @@ footer {
 
 header {
   mat-toolbar {
-    height: 55px;
+    height: 65px;
     border-bottom: 1px solid #3d3939;
   }
 }
@@ -32,4 +32,9 @@ header {
   height: 65px;
 }
 
+@media (max-width: 576px) {
+  .explore-template-button{
+    display: none;
+  }
+}
 

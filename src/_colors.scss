@@ -19,12 +19,12 @@ $card-header-bg: #3d3b3b;
   background-color: mat.get-color-from-palette($my-accent);
 }
 @mixin primary {
-  color: mat.get-color-from-palette($my-primary, '500-contrast');
+  color: mat.get-color-from-palette($my-primary, 'lighter');
 }
 
 @mixin accent {
   color: mat.get-color-from-palette($my-accent, '500-contrast');
 }
 
-$primary: mat.get-color-from-palette($my-primary);//, '500-contrast');
-$accent: mat.get-color-from-palette($my-accent, '500-contrast');
+$primary: mat.get-color-from-palette($my-primary,'lighter');//, '500-contrast');
+$accent: mat.get-color-from-palette($my-accent, 'lighter');

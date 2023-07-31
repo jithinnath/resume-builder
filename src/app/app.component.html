@@ -3,7 +3,7 @@
     ><span>
       <button
       mat-icon-button
-        color="primary"
+
         aria-label="Example icon button with a home icon"
         (click)="home()"
         matTooltip="Goto Dashboard">
@@ -11,7 +11,16 @@
       </button></span
     >&nbsp;<span>Resume Builder</span>
     <span class="example-spacer"></span>
-    <button mat-button (click)="downloadSample()">Explore Templates</button>
+    <ng-container ><button class="explore-template-button" mat-button (click)="downloadSample()">Explore Templates</button></ng-container>
+    <ng-container>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>
+          <span class="material-symbols-outlined">
+            apps
+            </span>
+        </mat-icon>
+      </button>
+    </ng-container>
   </mat-toolbar>
 </header>
 <main class="container-fluid mat-app-background">
@@ -24,3 +33,41 @@
     <a href="https://github.com/jithinnath">GitHub</a>
   </mat-toolbar>
 </footer>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="downloadSample()">
+    <mat-icon>
+      <span class="material-symbols-outlined">
+        file_open
+        </span>
+    </mat-icon>
+    <span> Explore Templates</span>
+   </button>
+  <button mat-menu-item disabled>
+    <mat-icon>
+      <span class="material-symbols-outlined">
+        downloading
+        </span>
+    </mat-icon>
+    <span>Download json</span>
+  </button>
+  <button mat-menu-item disabled>
+    <mat-icon>
+      <span class="material-symbols-outlined">
+        upload_file
+        </span>
+    </mat-icon>
+    <span>Upload json</span>
+  </button>
+  <button mat-menu-item (click)="openLink('https://github.com/jithinnath/resume-builder/issues/new')">
+    <mat-icon><span class="material-symbols-outlined">
+      open_in_new
+      </span></mat-icon>
+    <span>Report Issue</span>
+  </button>
+  <button mat-menu-item (click)="openLink('https://github.com/jithinnath/resume-builder')">
+    <mat-icon><span class="material-symbols-outlined">
+      open_in_new
+      </span></mat-icon>
+    <span>Git Hub</span>
+  </button>
+</mat-menu>

@@ -28,4 +28,8 @@ export class AppComponent implements OnInit {
   home() {
     this.router.navigate(['resume-dashboard']);
   }
+
+  openLink (url:string) {
+    window.open(url,'_blank')
+  }
 }

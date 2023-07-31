@@ -25,6 +25,8 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { TemplateDashboardComponent } from './template-dashboard/template-dashboard.component';
 import {TextFieldModule} from '@angular/cdk/text-field';
 import { HttpClientModule } from '@angular/common/http';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -60,7 +62,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatTooltipModule,
     TextFieldModule,
-    HttpClientModule
+    HttpClientModule,
+    MatMenuModule,
+    MatSidenavModule
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
