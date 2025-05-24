@@ -15,7 +15,7 @@ import { Template } from './template';
 })
 export class PdfMakeService {
   private server: string = this.dataService.getServer();
-  private _data!: IResume; // this.dataService.getResumeData() as IResume;
+  private _data!: IResume | null; // this.dataService.getResumeData() as IResume;
   private _config: IDocConfig = this.dataService.getConfig() as IDocConfig;
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -23,15 +23,17 @@ export class PdfMakeService {
     this._data = data;
     this.t = this.initTemplate(templateId);
     (window.navigator as any).userAgentData.mobile
-      ? pdfMake.createPdf(this.t.dd(this._data)).download()
-      : pdfMake.createPdf(this.t.dd(this._data)).open();
+      ? pdfMake.createPdf(this.t.dd(this._data!)).download()
+      : pdfMake.createPdf(this.t.dd(this._data!)).open();
     cacheData();
+    this._data = null;
   }
 
   public previewPdf(data: IResume, callback: (data: string) => void = () => null) {
     this._data = data;
-    pdfMake.createPdf(this.t.dd(this._data)).getDataUrl(data => {
+    pdfMake.createPdf(this.t.dd(this._data!)).getDataUrl(data => {
       callback(data);
+      this._data = null;
     });
   }
   t: Template = new Template1();
